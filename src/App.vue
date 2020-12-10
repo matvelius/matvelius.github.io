@@ -1,22 +1,28 @@
 <template>
-  <v-app id="main">
-    <v-parallax :src="require('@/assets/img/parallax14.jpg')" height="250">
+  <v-app id="main" v-resize="onResize">
+    <v-parallax
+      :src="require('@/assets/img/parallax14.jpg')"
+      :height="parallaxHeight"
+    >
       <v-row align="center" justify="center">
-        <v-col class="parallaxContainer d-flex justify-space-between" cols="12">
-          <div class="leftContainer d-flex flex-column justify-space-between">
+        <v-col
+          class="parallaxContainer d-flex justify-space-between flex-wrap"
+          cols="12"
+        >
+          <div
+            class="leftContainer d-flex flex-column justify-space-between flex-wrap"
+          >
             <div class="topContainer">
               <h1 class="font-weight-medium">Matvey Kostukovsky</h1>
               <h3 class="font-weight-regular">Software Developer</h3>
             </div>
 
-            <v-spacer></v-spacer>
-
             <div class="bottomContainer d-flex align-center flex-wrap">
-              <h4>
+              <!-- <h4>
                 <span class="font-weight-regular text-decoration-underline">
                   Expertise</span
                 >:
-              </h4>
+              </h4> -->
 
               <v-tooltip top>
                 <template v-slot:activator="{ on, attrs }">
@@ -97,22 +103,20 @@
                   </table>
                 </div>
               </v-tooltip>
-
-              <div class="chip"></div>
             </div>
           </div>
 
           <div
-            class="rightContainer d-flex flex-column justify-space-around px-6 mx-n1"
+            class="rightContainer d-flex justify-space-around align-center px-6 mx-n1"
           >
             <v-btn small color="white">
               <v-icon left> mdi-linkedin </v-icon>
               <span>LinkedIn</span>
             </v-btn>
-            <v-btn small color="primary">
+            <v-btn small color="white">
               <v-icon left> mdi-github </v-icon><span>Github</span>
             </v-btn>
-            <v-btn small color="primary">
+            <v-btn small color="white">
               <v-icon left> mdi-email </v-icon>
               <span>E-mail</span>
             </v-btn>
@@ -121,12 +125,15 @@
       </v-row>
     </v-parallax>
 
+    <v-alert class="banner text-center"><h2>Recent Projects:</h2></v-alert>
+
     <v-expansion-panels v-model="panel" multiple focusable>
+      <!-- PROJECT 1 -->
       <v-expansion-panel>
         <v-expansion-panel-header>
           <span>
             <strong>Solbe: </strong>
-            SwiftUI, Node/Express, SQL Server
+            Swift & Xcode, SwiftUI, Node/Express, SQL Server
           </span>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -190,6 +197,284 @@
           </div>
         </v-expansion-panel-content>
       </v-expansion-panel>
+
+      <!-- PROJECT 2 -->
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          <span>
+            <strong>Piano Notes Trainer: </strong>
+            Swift & Xcode, UIKit, AVFoundation; Sketch
+          </span>
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <div
+            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0"
+            fill-height
+          >
+            <div class="textContainer ma-3" width="70%">
+              <p>
+                The Piano Notes Trainer app is designed to supplement piano lessons and help students learn to find and recognize notes on the piano as well as the musical staff.
+
+Piano Notes Trainer includes a LEARN section and an interactive PLAY SECTION.
+
+The LEARN section consists of slides that introduce the student to the piano keyboard, as well as basic music theory and the fundamentals of music notation.
+
+The PLAY section allows the students to practice their note-naming and note-finding skills in a game-like manner. The goal is to get the answers right consistently (just like a real piece of music would require) in order to earn points, stars, and pass levels.
+
+There is a FREEPLAY section designed for teachers, parents, and more advanced students who need to customize the training session.
+              </p>
+
+              <p>
+                The iOS app uses Apple's SwiftUI framework and connects to an
+                Express API hosted on Heroku for login and account creation,
+                registering thoughts, and to obtain the latest group, member,
+                and stats data. The Express app utilizes the Tedious library in
+                order to query the SQL Server database. Most of the app
+                functionality is in the form of stored procedures which the
+                Express app triggers.
+              </p>
+            </div>
+            <div class="videoContainerContainer ma-3 elevation-5" width="30%">
+              <div class="videoContainer">
+                <video
+                  height="500"
+                  autoplay
+                  loop
+                  muted="muted"
+                  poster="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.jpg"
+                  class="block"
+                >
+                  <source
+                    type="video/mp4"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4"
+                  />
+
+                  <source
+                    type="video/webm"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.webm"
+                  />
+
+                  Your browser does not support HTML5 video tag.
+
+                  <a
+                    href="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.gif"
+                    >Click here to view original GIF</a
+                  >
+                </video>
+              </div>
+            </div>
+          </div>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+
+
+    <!-- PROJECT 3 -->
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          <span>
+            <strong>Gemrover eBay Template & Website: </strong>
+            HTML5, CSS, and lots of flexbox
+          </span>
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <div
+            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0"
+            fill-height
+          >
+            <div class="textContainer ma-3" width="70%">
+              <p>
+                The Piano Notes Trainer app is designed to supplement piano lessons and help students learn to find and recognize notes on the piano as well as the musical staff.
+
+Piano Notes Trainer includes a LEARN section and an interactive PLAY SECTION.
+
+The LEARN section consists of slides that introduce the student to the piano keyboard, as well as basic music theory and the fundamentals of music notation.
+
+The PLAY section allows the students to practice their note-naming and note-finding skills in a game-like manner. The goal is to get the answers right consistently (just like a real piece of music would require) in order to earn points, stars, and pass levels.
+
+There is a FREEPLAY section designed for teachers, parents, and more advanced students who need to customize the training session.
+              </p>
+
+              <p>
+                The iOS app uses Apple's SwiftUI framework and connects to an
+                Express API hosted on Heroku for login and account creation,
+                registering thoughts, and to obtain the latest group, member,
+                and stats data. The Express app utilizes the Tedious library in
+                order to query the SQL Server database. Most of the app
+                functionality is in the form of stored procedures which the
+                Express app triggers.
+              </p>
+            </div>
+            <div class="videoContainerContainer ma-3 elevation-5" width="30%">
+              <div class="videoContainer">
+                <video
+                  height="500"
+                  autoplay
+                  loop
+                  muted="muted"
+                  poster="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.jpg"
+                  class="block"
+                >
+                  <source
+                    type="video/mp4"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4"
+                  />
+
+                  <source
+                    type="video/webm"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.webm"
+                  />
+
+                  Your browser does not support HTML5 video tag.
+
+                  <a
+                    href="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.gif"
+                    >Click here to view original GIF</a
+                  >
+                </video>
+              </div>
+            </div>
+          </div>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+
+      <!-- PROJECT 4 -->
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          <span>
+            <strong>Mashup - Local News Articles on Google Maps: </strong>
+            Python & Flask, AJAX, jQuery, HTML & CSS, SQLite 3, Google Maps API
+          </span>
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <div
+            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0"
+            fill-height
+          >
+            <div class="textContainer ma-3" width="70%">
+              <p>
+                The Piano Notes Trainer app is designed to supplement piano lessons and help students learn to find and recognize notes on the piano as well as the musical staff.
+
+Piano Notes Trainer includes a LEARN section and an interactive PLAY SECTION.
+
+The LEARN section consists of slides that introduce the student to the piano keyboard, as well as basic music theory and the fundamentals of music notation.
+
+The PLAY section allows the students to practice their note-naming and note-finding skills in a game-like manner. The goal is to get the answers right consistently (just like a real piece of music would require) in order to earn points, stars, and pass levels.
+
+There is a FREEPLAY section designed for teachers, parents, and more advanced students who need to customize the training session.
+              </p>
+
+              <p>
+                The iOS app uses Apple's SwiftUI framework and connects to an
+                Express API hosted on Heroku for login and account creation,
+                registering thoughts, and to obtain the latest group, member,
+                and stats data. The Express app utilizes the Tedious library in
+                order to query the SQL Server database. Most of the app
+                functionality is in the form of stored procedures which the
+                Express app triggers.
+              </p>
+            </div>
+            <div class="videoContainerContainer ma-3 elevation-5" width="30%">
+              <div class="videoContainer">
+                <video
+                  height="500"
+                  autoplay
+                  loop
+                  muted="muted"
+                  poster="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.jpg"
+                  class="block"
+                >
+                  <source
+                    type="video/mp4"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4"
+                  />
+
+                  <source
+                    type="video/webm"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.webm"
+                  />
+
+                  Your browser does not support HTML5 video tag.
+
+                  <a
+                    href="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.gif"
+                    >Click here to view original GIF</a
+                  >
+                </video>
+              </div>
+            </div>
+          </div>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+
+  <!-- PROJECT 5 -->
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          <span>
+            <strong>Finance - Stock Quotes & Trading: </strong>
+            IEX Trading API, Python & Flask, SQLite 3 & phpLiteAdmin
+          </span>
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <div
+            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0"
+            fill-height
+          >
+            <div class="textContainer ma-3" width="70%">
+              <p>
+                The Piano Notes Trainer app is designed to supplement piano lessons and help students learn to find and recognize notes on the piano as well as the musical staff.
+
+Piano Notes Trainer includes a LEARN section and an interactive PLAY SECTION.
+
+The LEARN section consists of slides that introduce the student to the piano keyboard, as well as basic music theory and the fundamentals of music notation.
+
+The PLAY section allows the students to practice their note-naming and note-finding skills in a game-like manner. The goal is to get the answers right consistently (just like a real piece of music would require) in order to earn points, stars, and pass levels.
+
+There is a FREEPLAY section designed for teachers, parents, and more advanced students who need to customize the training session.
+              </p>
+
+              <p>
+                The iOS app uses Apple's SwiftUI framework and connects to an
+                Express API hosted on Heroku for login and account creation,
+                registering thoughts, and to obtain the latest group, member,
+                and stats data. The Express app utilizes the Tedious library in
+                order to query the SQL Server database. Most of the app
+                functionality is in the form of stored procedures which the
+                Express app triggers.
+              </p>
+            </div>
+            <div class="videoContainerContainer ma-3 elevation-5" width="30%">
+              <div class="videoContainer">
+                <video
+                  height="500"
+                  autoplay
+                  loop
+                  muted="muted"
+                  poster="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.jpg"
+                  class="block"
+                >
+                  <source
+                    type="video/mp4"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4"
+                  />
+
+                  <source
+                    type="video/webm"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.webm"
+                  />
+
+                  Your browser does not support HTML5 video tag.
+
+                  <a
+                    href="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.gif"
+                    >Click here to view original GIF</a
+                  >
+                </video>
+              </div>
+            </div>
+          </div>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+
     </v-expansion-panels>
 
     <v-speed-dial
@@ -235,6 +520,7 @@ export default {
 
   data() {
     return {
+      parallaxHeight: 200,
       panel: [],
       items: 5,
       direction: "top",
@@ -247,6 +533,10 @@ export default {
       bottom: true,
       left: false,
       transition: "scale-transition",
+      windowSize: {
+        x: 0,
+        y: 0,
+      },
     };
   },
 
@@ -290,6 +580,19 @@ export default {
     none() {
       this.panel = [];
     },
+    onResize() {
+      this.windowSize = { x: window.innerWidth, y: window.innerHeight };
+      if (window.innerWidth <= 558) {
+        this.parallaxHeight = 290;
+      } else {
+        this.parallaxHeight = 260;
+      }
+      console.log(this.parallaxHeight);
+    },
+  },
+
+  mounted() {
+    this.onResize();
   },
 };
 </script>
@@ -318,13 +621,19 @@ export default {
 
 .v-parallax__image {
   /* max-width: 20% !important; */
-  opacity: 0.4 !important;
-  filter: blur(1px);
+  opacity: 0.17 !important;
+  filter: blur(2px);
   /* top: -3382px; */
-  left: -50%;
+  /* left: -50%; */
+}
+
+.leftContainer {
+  min-width: 300px;
 }
 
 .rightContainer {
+  flex-direction: column;
+  min-width: 157px;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   position: relative;
@@ -345,6 +654,24 @@ export default {
   box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
   filter: blur(10px);
   margin: -20px;
+}
+
+.banner {
+  height: 125px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  color: #4e4e4e !important;
+  margin-bottom: 0 !important;
+}
+
+button span {
+  line-height: 1.4;
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
 }
 
 .photo {
@@ -560,6 +887,27 @@ export default {
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+.v-expansion-panel-header {
+  min-height: 97px !important;
+}
+
+@media screen and (max-width: 558px) {
+  #main {
+    padding: 0px;
+  }
+  .leftContainer {
+    width: 100%;
+  }
+  .bottomContainer {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .rightContainer {
+    flex-direction: row;
+    width: 100%;
   }
 }
 

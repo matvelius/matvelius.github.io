@@ -109,14 +109,14 @@
           <div
             class="rightContainer d-flex justify-space-around align-center px-6 mx-n1"
           >
-            <v-btn small color="white">
+            <v-btn small color="white" class="contactButton">
               <v-icon left> mdi-linkedin </v-icon>
               <span>LinkedIn</span>
             </v-btn>
-            <v-btn small color="white">
+            <v-btn small color="white" class="contactButton">
               <v-icon left> mdi-github </v-icon><span>Github</span>
             </v-btn>
-            <v-btn small color="white">
+            <v-btn small color="white" class="contactButton">
               <v-icon left> mdi-email </v-icon>
               <span>E-mail</span>
             </v-btn>
@@ -166,7 +166,7 @@
               </p>
             </div>
             <div class="videoContainerContainer ma-3 elevation-5" width="30%">
-              <div class="videoContainer">
+              <div class="solbeVideoContainer">
                 <video
                   height="500"
                   autoplay
@@ -207,68 +207,190 @@
           </span>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
-          <div
-            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0"
-            fill-height
-          >
-            <div class="textContainer ma-3" width="70%">
-              <p>
-                The Piano Notes Trainer app is designed to supplement piano lessons and help students learn to find and recognize notes on the piano as well as the musical staff.
-
-Piano Notes Trainer includes a LEARN section and an interactive PLAY SECTION.
-
-The LEARN section consists of slides that introduce the student to the piano keyboard, as well as basic music theory and the fundamentals of music notation.
-
-The PLAY section allows the students to practice their note-naming and note-finding skills in a game-like manner. The goal is to get the answers right consistently (just like a real piece of music would require) in order to earn points, stars, and pass levels.
-
-There is a FREEPLAY section designed for teachers, parents, and more advanced students who need to customize the training session.
-              </p>
-
-              <p>
-                The iOS app uses Apple's SwiftUI framework and connects to an
-                Express API hosted on Heroku for login and account creation,
-                registering thoughts, and to obtain the latest group, member,
-                and stats data. The Express app utilizes the Tedious library in
-                order to query the SQL Server database. Most of the app
-                functionality is in the form of stored procedures which the
-                Express app triggers.
-              </p>
-            </div>
-            <div class="videoContainerContainer ma-3 elevation-5" width="30%">
-              <div class="videoContainer">
-                <video
-                  height="500"
+          <div class="panelContent py-5 px-0">
+            <div class="oval elevation-5">
+              <span class="ovalText"
+                ><video
+                  width="100%"
+                  max-height="100%"
                   autoplay
                   loop
                   muted="muted"
-                  poster="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.jpg"
-                  class="block"
+                  poster="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.jpg"
+                  class="block pianoAppVideo"
                 >
                   <source
                     type="video/mp4"
-                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.mp4"
                   />
 
                   <source
                     type="video/webm"
-                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.webm"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.webm"
                   />
 
                   Your browser does not support HTML5 video tag.
 
                   <a
-                    href="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.gif"
+                    href="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.gif"
                     >Click here to view original GIF</a
                   >
-                </video>
-              </div>
+                </video></span
+              >
+            </div>
+            <div>
+              <p>
+                The Piano Notes Trainer app is designed to supplement piano
+                lessons and help students learn to find and recognize notes on
+                the piano and the musical staff. The app is divided into two
+                sections, one for learning the basics by going through slides,
+                and another for gamifying the learning experience.
+              </p>
+
+              <p>
+                The LEARN section introduces the student to the piano keyboard,
+                as well as basic music theory and the fundamentals of music
+                notation. The PLAY section allows the students to practice their
+                note-naming and note-finding skills while earning points, stars,
+                and passing levels. There is a FREEPLAY section designed for
+                teachers, parents, and more advanced students who need to
+                customize the training session.
+              </p>
+
+              <h3>Features & challenges:</h3>
+
+              <p>
+                My goal was to make the piano look as realistic as possible. The
+                main screen of the PLAY section is built around a beautiful
+                stock photo of the piano keyboard. Since this is not a drawing,
+                which is what you see in most piano-related apps, there is real
+                perspective to deal with. To give the key buttons the proper
+                angle and positioning, I used CGAffineTransforms (mainly
+                rotation and scaling) to get every key perfectly in place. This
+                results in some lengthy chained statements:
+              </p>
+
+              <prism language="swift"
+                >positiveRotationTransforms.append(CGAffineTransform(rotationAngle:CGFloat(angleMult
+                * angleInc)))</prism
+              >
+
+              <p>
+                The biggest challenge, though, turned out to be game logic, as
+                music theory itself presents some interesting problems to solve.
+                It took some time to figure out how to deal with enharmonic
+                equivalents (e.g. F# & Gb), especially when octave changes are
+                involved (e.g. B#3 == C4). I also decided to use two versions of
+                the middle C, as well as C# & Cb, to help students deal with the
+                confusion of switching clefs.
+              </p>
+
+              <p>
+                For game levels that are designed around the musical staff I had
+                to use a different image in order to display a bigger range.
+              </p>
+
+              <p>
+                The note on staff moves up and down with a simple
+                swiping/panning gesture with one finger. To add this
+                functionality, I used the UIPanGestureRecognizer in combination
+                with some basic, albeit slightly tricky algebra that calculates
+                the current note to display by factoring in image height and
+                finger position on the image view.
+              </p>
+
+              <p>
+                The last few weeks of the development process were mainly spent
+                perfecting the logic of the multitude of options I decided to
+                add to the settings menu. My goal was to enable students,
+                teachers, and parents to set up the game to train for very
+                specific goals, such as focusing on just the treble clef (or
+                just the bass clef), or only practicing the sharps flats in a
+                specific range.
+              </p>
+
+              <p>
+                App Store link:
+                <a href="https://apple.co/2NeIkm6">https://apple.co/2NeIkm6</a>
+              </p>
             </div>
           </div>
+          <!-- <div
+            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0"
+          >
+            <div class="videoContainer flex-shrink-1 flex-grow-0">
+              <video
+                width="100%"
+                max-height="100%"
+                autoplay
+                loop
+                muted="muted"
+                poster="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.jpg"
+                class="block"
+              >
+                <source
+                  type="video/mp4"
+                  src="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.mp4"
+                />
+
+                <source
+                  type="video/webm"
+                  src="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.webm"
+                />
+
+                Your browser does not support HTML5 video tag.
+
+                <a
+                  href="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.gif"
+                  >Click here to view original GIF</a
+                >
+              </video>
+            </div>
+            <div
+              class="roundedVideoContainer ma-3 elevation-5 d-flex justify-space-between"
+            >
+              
+            </div> 
+
+            <div class="textContainer flex-grow-1 ma-3">
+              <p>
+                The Piano Notes Trainer app is designed to supplement piano
+                lessons and help students learn to find and recognize notes on
+                the piano and the musical staff. The app is divided into two
+                sections, one for learning the basics by going through slides,
+                and another for gamifying the learning experience. The LEARN
+                section introduces the student to the piano keyboard, as well as
+                basic music theory and the fundamentals of music notation. The
+                PLAY section allows the students to practice their note-naming
+                and note-finding skills while earning points, stars, and passing
+                levels. There is a FREEPLAY section designed for teachers,
+                parents, and more advanced students who need to customize the
+                training session.
+              </p>
+
+              <h3>Features & challenges:</h3>
+
+              <p>
+                My goal was to make the piano look as realistic as possible. The
+                main screen of the PLAY section is built around a beautiful
+                stock photo of the piano keyboard. Since this is not a drawing,
+                which is what you see in most piano-related apps, there is real
+                perspective to deal with. To give the key buttons the proper
+                angle and positioning, I used CGAffineTransforms (mainly
+                rotation and scaling) to get every key perfectly in place. This
+                results in some lengthy chained statements:
+              </p>
+
+              <prism language="swift"
+                >positiveRotationTransforms.append(CGAffineTransform(rotationAngle:CGFloat(angleMult
+                * angleInc)))</prism
+              >
+            </div>
+          </div> -->
         </v-expansion-panel-content>
       </v-expansion-panel>
 
-
-    <!-- PROJECT 3 -->
+      <!-- PROJECT 3 -->
       <v-expansion-panel>
         <v-expansion-panel-header>
           <span>
@@ -283,15 +405,19 @@ There is a FREEPLAY section designed for teachers, parents, and more advanced st
           >
             <div class="textContainer ma-3" width="70%">
               <p>
-                The Piano Notes Trainer app is designed to supplement piano lessons and help students learn to find and recognize notes on the piano as well as the musical staff.
-
-Piano Notes Trainer includes a LEARN section and an interactive PLAY SECTION.
-
-The LEARN section consists of slides that introduce the student to the piano keyboard, as well as basic music theory and the fundamentals of music notation.
-
-The PLAY section allows the students to practice their note-naming and note-finding skills in a game-like manner. The goal is to get the answers right consistently (just like a real piece of music would require) in order to earn points, stars, and pass levels.
-
-There is a FREEPLAY section designed for teachers, parents, and more advanced students who need to customize the training session.
+                The Piano Notes Trainer app is designed to supplement piano
+                lessons and help students learn to find and recognize notes on
+                the piano as well as the musical staff. Piano Notes Trainer
+                includes a LEARN section and an interactive PLAY SECTION. The
+                LEARN section consists of slides that introduce the student to
+                the piano keyboard, as well as basic music theory and the
+                fundamentals of music notation. The PLAY section allows the
+                students to practice their note-naming and note-finding skills
+                in a game-like manner. The goal is to get the answers right
+                consistently (just like a real piece of music would require) in
+                order to earn points, stars, and pass levels. There is a
+                FREEPLAY section designed for teachers, parents, and more
+                advanced students who need to customize the training session.
               </p>
 
               <p>
@@ -352,15 +478,19 @@ There is a FREEPLAY section designed for teachers, parents, and more advanced st
           >
             <div class="textContainer ma-3" width="70%">
               <p>
-                The Piano Notes Trainer app is designed to supplement piano lessons and help students learn to find and recognize notes on the piano as well as the musical staff.
-
-Piano Notes Trainer includes a LEARN section and an interactive PLAY SECTION.
-
-The LEARN section consists of slides that introduce the student to the piano keyboard, as well as basic music theory and the fundamentals of music notation.
-
-The PLAY section allows the students to practice their note-naming and note-finding skills in a game-like manner. The goal is to get the answers right consistently (just like a real piece of music would require) in order to earn points, stars, and pass levels.
-
-There is a FREEPLAY section designed for teachers, parents, and more advanced students who need to customize the training session.
+                The Piano Notes Trainer app is designed to supplement piano
+                lessons and help students learn to find and recognize notes on
+                the piano as well as the musical staff. Piano Notes Trainer
+                includes a LEARN section and an interactive PLAY SECTION. The
+                LEARN section consists of slides that introduce the student to
+                the piano keyboard, as well as basic music theory and the
+                fundamentals of music notation. The PLAY section allows the
+                students to practice their note-naming and note-finding skills
+                in a game-like manner. The goal is to get the answers right
+                consistently (just like a real piece of music would require) in
+                order to earn points, stars, and pass levels. There is a
+                FREEPLAY section designed for teachers, parents, and more
+                advanced students who need to customize the training session.
               </p>
 
               <p>
@@ -406,7 +536,7 @@ There is a FREEPLAY section designed for teachers, parents, and more advanced st
         </v-expansion-panel-content>
       </v-expansion-panel>
 
-  <!-- PROJECT 5 -->
+      <!-- PROJECT 5 -->
       <v-expansion-panel>
         <v-expansion-panel-header>
           <span>
@@ -421,15 +551,19 @@ There is a FREEPLAY section designed for teachers, parents, and more advanced st
           >
             <div class="textContainer ma-3" width="70%">
               <p>
-                The Piano Notes Trainer app is designed to supplement piano lessons and help students learn to find and recognize notes on the piano as well as the musical staff.
-
-Piano Notes Trainer includes a LEARN section and an interactive PLAY SECTION.
-
-The LEARN section consists of slides that introduce the student to the piano keyboard, as well as basic music theory and the fundamentals of music notation.
-
-The PLAY section allows the students to practice their note-naming and note-finding skills in a game-like manner. The goal is to get the answers right consistently (just like a real piece of music would require) in order to earn points, stars, and pass levels.
-
-There is a FREEPLAY section designed for teachers, parents, and more advanced students who need to customize the training session.
+                The Piano Notes Trainer app is designed to supplement piano
+                lessons and help students learn to find and recognize notes on
+                the piano as well as the musical staff. Piano Notes Trainer
+                includes a LEARN section and an interactive PLAY SECTION. The
+                LEARN section consists of slides that introduce the student to
+                the piano keyboard, as well as basic music theory and the
+                fundamentals of music notation. The PLAY section allows the
+                students to practice their note-naming and note-finding skills
+                in a game-like manner. The goal is to get the answers right
+                consistently (just like a real piece of music would require) in
+                order to earn points, stars, and pass levels. There is a
+                FREEPLAY section designed for teachers, parents, and more
+                advanced students who need to customize the training session.
               </p>
 
               <p>
@@ -442,6 +576,7 @@ There is a FREEPLAY section designed for teachers, parents, and more advanced st
                 Express app triggers.
               </p>
             </div>
+
             <div class="videoContainerContainer ma-3 elevation-5" width="30%">
               <div class="videoContainer">
                 <video
@@ -474,7 +609,6 @@ There is a FREEPLAY section designed for teachers, parents, and more advanced st
           </div>
         </v-expansion-panel-content>
       </v-expansion-panel>
-
     </v-expansion-panels>
 
     <v-speed-dial
@@ -512,11 +646,18 @@ There is a FREEPLAY section designed for teachers, parents, and more advanced st
 </template>
 
 <script>
+import "prismjs";
+import "prismjs/components/prism-swift";
+import "prismjs/themes/prism-okaidia.css";
+
+import Prism from "vue-prism-component";
+
 export default {
   name: "App",
 
-  // components: {
-  // },
+  components: {
+    Prism,
+  },
 
   data() {
     return {
@@ -593,6 +734,7 @@ export default {
 
   mounted() {
     this.onResize();
+    // Prism.highlightAll();
   },
 };
 </script>
@@ -668,10 +810,14 @@ export default {
 button span {
   line-height: 1.4;
   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-line-clamp: 2; /* number of lines to show */
-   -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.contactButton {
+  width: 119px;
 }
 
 .photo {
@@ -683,16 +829,80 @@ button span {
 }
 
 .videoContainerContainer {
-  max-width: 281px;
-  max-height: 494px;
-}
-
-.videoContainer {
+  min-width: 281px;
+  max-height: 499px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
 .videoContainer video {
-  transform: translateY(-2px);
+  transform: scale(1.015);
+}
+
+.solbeVideoContainer video {
+  transform: translateY(-1px) scale(1.0005);
+  border-radius: 5px;
+}
+
+.textContainer {
+  max-width: 65%;
+}
+
+.roundedVideoContainer {
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 50%;
+  max-height: auto;
+}
+
+.roundedVideoContainer .videoContainer video {
+  transform: scale(1.003);
+  shape-outside: url(https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4);
+  float: left;
+}
+
+.pianoAppVideo {
+  transform: scale(1.003);
+}
+
+.oval {
+  min-width: 272px;
+  max-width: 700px;
+  height: auto;
+  background: MediumPurple;
+  color: #111;
+  text-align: center;
+  line-height: 0;
+  /* font-size: 90px; */
+  float: left;
+  shape-outside: margin-box;
+  margin-right: 30px;
+  margin-bottom: 25px;
+  border-radius: 11px !important;
+  overflow: hidden;
+}
+
+.ovalText {
+  display: inline-block;
+}
+
+.v-application code {
+  background-color: inherit !important;
+  color: inherit !important;
+  padding: 0 !important;
+}
+
+.v-application code,
+.v-application kbd {
+  border-radius: 0 !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  white-space: normal !important;
+  word-break: break-word !important;
 }
 
 .wiggle1 {

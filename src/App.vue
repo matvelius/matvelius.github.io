@@ -137,11 +137,11 @@
           </span>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
-          <div
-            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0"
+          <!-- <div
+            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0 solbeMainContainer"
             fill-height
           >
-            <div class="textContainer ma-3" width="70%">
+            <div class="textContainer solbeTextContainer ma-3" width="70%">
               <p>
                 Solbe is minimalistic social networking app designed to
                 demonstrate that thoughts really do travel. As various friends
@@ -194,6 +194,61 @@
                 </video>
               </div>
             </div>
+          </div> -->
+
+          <div class="solbeVideoOuterContainer my-5 elevation-5" width="30%">
+            <!-- <div class="videoContainerContainer elevation-5" width="30%"> -->
+            <div class="solbeVideoContainer">
+              <video
+                height="500"
+                autoplay
+                loop
+                muted="muted"
+                poster="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.jpg"
+                class="block"
+              >
+                <source
+                  type="video/mp4"
+                  src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4"
+                />
+
+                <source
+                  type="video/webm"
+                  src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.webm"
+                />
+
+                Your browser does not support HTML5 video tag.
+
+                <a
+                  href="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.gif"
+                  >Click here to view original GIF</a
+                >
+              </video>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div class="textContainer solbeTextContainer my-4" width="70%">
+            <p>
+              Solbe is minimalistic social networking app designed to
+              demonstrate that thoughts really do travel. As various friends and
+              family members pop into your mind throughout the day, Solbe allows
+              you to register these seemingly random occurences with a simple
+              tap. When two people tap each other's names within a certain
+              period of time a <em>connection</em> is recorded and stored in the
+              database for later analysis and to be shown in the Personal Stats
+              tab. Over time users are able to see who they're most
+              <em>"connected"</em> to and how their telepathic skills stack up
+              against those closest to them.
+            </p>
+
+            <p>
+              The iOS app uses Apple's SwiftUI framework and connects to an
+              Express API hosted on Heroku for login and account creation,
+              registering thoughts, and to obtain the latest group, member, and
+              stats data. The Express app utilizes the Tedious library in order
+              to query the SQL Server database. Most of the app functionality is
+              in the form of stored procedures which the Express app triggers.
+            </p>
           </div>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -208,8 +263,8 @@
         </v-expansion-panel-header>
         <v-expansion-panel-content>
           <div class="panelContent py-5 px-0">
-            <div class="oval elevation-5">
-              <span class="ovalText"
+            <div class="outerVideoContainer elevation-5">
+              <span class="horizontalVideoContainer"
                 ><video
                   width="100%"
                   max-height="100%"
@@ -315,78 +370,6 @@
               </p>
             </div>
           </div>
-          <!-- <div
-            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0"
-          >
-            <div class="videoContainer flex-shrink-1 flex-grow-0">
-              <video
-                width="100%"
-                max-height="100%"
-                autoplay
-                loop
-                muted="muted"
-                poster="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.jpg"
-                class="block"
-              >
-                <source
-                  type="video/mp4"
-                  src="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.mp4"
-                />
-
-                <source
-                  type="video/webm"
-                  src="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.webm"
-                />
-
-                Your browser does not support HTML5 video tag.
-
-                <a
-                  href="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.gif"
-                  >Click here to view original GIF</a
-                >
-              </video>
-            </div>
-            <div
-              class="roundedVideoContainer ma-3 elevation-5 d-flex justify-space-between"
-            >
-              
-            </div> 
-
-            <div class="textContainer flex-grow-1 ma-3">
-              <p>
-                The Piano Notes Trainer app is designed to supplement piano
-                lessons and help students learn to find and recognize notes on
-                the piano and the musical staff. The app is divided into two
-                sections, one for learning the basics by going through slides,
-                and another for gamifying the learning experience. The LEARN
-                section introduces the student to the piano keyboard, as well as
-                basic music theory and the fundamentals of music notation. The
-                PLAY section allows the students to practice their note-naming
-                and note-finding skills while earning points, stars, and passing
-                levels. There is a FREEPLAY section designed for teachers,
-                parents, and more advanced students who need to customize the
-                training session.
-              </p>
-
-              <h3>Features & challenges:</h3>
-
-              <p>
-                My goal was to make the piano look as realistic as possible. The
-                main screen of the PLAY section is built around a beautiful
-                stock photo of the piano keyboard. Since this is not a drawing,
-                which is what you see in most piano-related apps, there is real
-                perspective to deal with. To give the key buttons the proper
-                angle and positioning, I used CGAffineTransforms (mainly
-                rotation and scaling) to get every key perfectly in place. This
-                results in some lengthy chained statements:
-              </p>
-
-              <prism language="swift"
-                >positiveRotationTransforms.append(CGAffineTransform(rotationAngle:CGFloat(angleMult
-                * angleInc)))</prism
-              >
-            </div>
-          </div> -->
         </v-expansion-panel-content>
       </v-expansion-panel>
 
@@ -839,12 +822,27 @@ button span {
   transform: scale(1.015);
 }
 
-.solbeVideoContainer video {
-  transform: translateY(-1px) scale(1.0005);
-  border-radius: 5px;
+.solbeMainContainer {
+  overflow-wrap: anywhere;
 }
 
-.textContainer {
+.solbeVideoOuterContainer {
+  width: 280px;
+  border-radius: 5px;
+  overflow: hidden;
+  float: right;
+  margin-left: 15px;
+}
+
+.solbeVideoContainer {
+  max-height: 499px;
+}
+
+.solbeVideoContainer video {
+  transform: translateY(-1px) scale(1.0005);
+}
+
+.solbeTextContainer {
   max-width: 65%;
 }
 
@@ -866,6 +864,22 @@ button span {
 }
 
 .oval {
+  width: 400px;
+  height: 250px;
+  background: MediumPurple;
+  color: #111;
+
+  text-align: center;
+  font-size: 90px;
+  float: right;
+  shape-outside: content-box;
+}
+.asdf {
+  padding-top: 70px;
+  display: inline-block;
+}
+
+.outerVideoContainer {
   min-width: 272px;
   max-width: 700px;
   height: auto;
@@ -882,7 +896,7 @@ button span {
   overflow: hidden;
 }
 
-.ovalText {
+.horizontalVideoContainer {
   display: inline-block;
 }
 
@@ -1104,6 +1118,22 @@ pre[class*="language-"] {
   min-height: 97px !important;
 }
 
+@media screen and (max-width: 900px) {
+  .outerVideoContainer {
+    margin: 20px auto;
+    float: none;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .solbeTextContainer {
+    min-width: 100% !important;
+  }
+  .videoContainerContainer {
+    display: block;
+  }
+}
+
 @media screen and (max-width: 558px) {
   #main {
     padding: 0px;
@@ -1118,6 +1148,17 @@ pre[class*="language-"] {
   .rightContainer {
     flex-direction: row;
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .solbeVideoOuterContainer {
+    /* width: 280px; */
+    margin: 25px auto !important;
+    float: none;
+  }
+  .v-expansion-panel-content__wrap {
+    padding: 10px !important;
   }
 }
 

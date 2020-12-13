@@ -194,6 +194,15 @@
               to query the SQL Server database. Most of the app functionality is
               in the form of stored procedures which the Express app triggers.
             </p>
+
+            <p>
+              This project is a collaboration with a good friend, and we have
+              recently recruited a group of our mutual friends to take the app
+              through its paces via Apple's Test Flight. We are currently
+              ironing out various bugs and creating additional statistical
+              queries and views in order to provide the user with more insight
+              and make the app more interesting and fun to use.
+            </p>
           </div>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -262,12 +271,16 @@
               <p>
                 My goal was to make the piano look as realistic as possible. The
                 main screen of the PLAY section is built around a beautiful
-                stock photo of the piano keyboard. Since this is not a drawing,
-                which is what you see in most piano-related apps, there is real
-                perspective to deal with. To give the key buttons the proper
-                angle and positioning, I used CGAffineTransforms (mainly
-                rotation and scaling) to get every key perfectly in place. This
-                results in some lengthy chained statements:
+                stock photo of the piano keyboard I stumbled upon one day. Since
+                I did not go with a simple 2D drawing with clear parallel and
+                perpendicular lines, which is what you see in most piano-related
+                apps, there is real perspective to deal with. There are custom
+                key buttons superimposed on top of the photograph, and to get
+                their proper dimensions, angles, and positioning, I created an
+                algorithm that uses CGAffineTransforms (mainly rotation and
+                scaling) to calculate the specs needed to get every key
+                perfectly in place. This results in some interesting chained
+                statements such as:
               </p>
 
               <prism language="swift"
@@ -278,11 +291,11 @@
               <p>
                 The biggest challenge, though, turned out to be game logic, as
                 music theory itself presents some interesting problems to solve.
-                It took some time to figure out how to deal with enharmonic
-                equivalents (e.g. F# & Gb), especially when octave changes are
-                involved (e.g. B#3 == C4). I also decided to use two versions of
-                the middle C, as well as C# & Cb, to help students deal with the
-                confusion of switching clefs.
+                It took some time to figure out how to best programmatically
+                deal with enharmonic equivalents (e.g. F# & Gb), especially when
+                octave changes are involved (e.g. B#3 == C4). I also decided to
+                use two versions of the middle C, as well as C# & Cb, to help
+                students deal with the confusion of switching clefs.
               </p>
 
               <p>
@@ -353,7 +366,13 @@
                   <p>
                     When it comes to eBay templates, scripts are strictly
                     prohibited, so the page has to be made with pure HTML & CSS
-                    and lives inside an iframe.
+                    and will live inside an iframe. To further complicate
+                    things, I've discovered that the iPhone and Android eBay
+                    apps had slight differences in how they handled CSS as well
+                    (not to mention all the usuall cross-browser compatibility
+                    issues when it comes to layout, design, typography, etc.) --
+                    all this required a variety of alternative approaches,
+                    hacks, and workarounds.
                   </p>
 
                   <p>
@@ -363,7 +382,7 @@
                     radio button hack as the workaround:
                   </p>
 
-                  <prism language="css" id="code"
+                  <prism language="css"
                     >#id1:checked ~ #image1 { opacity: 1; animation: gallery .5s
                     linear; }
                   </prism>
@@ -488,62 +507,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="textContainer ma-3" width="70%">
-              <p>
-                The Piano Notes Trainer app is designed to supplement piano
-                lessons and help students learn to find and recognize notes on
-                the piano as well as the musical staff. Piano Notes Trainer
-                includes a LEARN section and an interactive PLAY SECTION. The
-                LEARN section consists of slides that introduce the student to
-                the piano keyboard, as well as basic music theory and the
-                fundamentals of music notation. The PLAY section allows the
-                students to practice their note-naming and note-finding skills
-                in a game-like manner. The goal is to get the answers right
-                consistently (just like a real piece of music would require) in
-                order to earn points, stars, and pass levels. There is a
-                FREEPLAY section designed for teachers, parents, and more
-                advanced students who need to customize the training session.
-              </p>
-
-              <p>
-                The iOS app uses Apple's SwiftUI framework and connects to an
-                Express API hosted on Heroku for login and account creation,
-                registering thoughts, and to obtain the latest group, member,
-                and stats data. The Express app utilizes the Tedious library in
-                order to query the SQL Server database. Most of the app
-                functionality is in the form of stored procedures which the
-                Express app triggers.
-              </p>
-            </div>
-            <div class="videoContainerContainer ma-3 elevation-5" width="30%">
-              <div class="videoContainer">
-                <video
-                  height="500"
-                  autoplay
-                  loop
-                  muted="muted"
-                  poster="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.jpg"
-                  class="block"
-                >
-                  <source
-                    type="video/mp4"
-                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4"
-                  />
-
-                  <source
-                    type="video/webm"
-                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.webm"
-                  />
-
-                  Your browser does not support HTML5 video tag.
-
-                  <a
-                    href="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.gif"
-                    >Click here to view original GIF</a
-                  >
-                </video>
-              </div>
-            </div> -->
           </div>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -557,65 +520,251 @@
           </span>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
-          <div
-            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0"
-            fill-height
-          >
-            <div class="textContainer ma-3" width="70%">
-              <p>
-                The Piano Notes Trainer app is designed to supplement piano
-                lessons and help students learn to find and recognize notes on
-                the piano as well as the musical staff. Piano Notes Trainer
-                includes a LEARN section and an interactive PLAY SECTION. The
-                LEARN section consists of slides that introduce the student to
-                the piano keyboard, as well as basic music theory and the
-                fundamentals of music notation. The PLAY section allows the
-                students to practice their note-naming and note-finding skills
-                in a game-like manner. The goal is to get the answers right
-                consistently (just like a real piece of music would require) in
-                order to earn points, stars, and pass levels. There is a
-                FREEPLAY section designed for teachers, parents, and more
-                advanced students who need to customize the training session.
-              </p>
+          <div class="" fill-height>
+            <div class="panelContent py-5 px-0">
+              <div class="contentBlock">
+                <img
+                  class="projectImage float-sm-right rounded-lg elevation-5"
+                  :src="require('@/assets/img/google_maps_3.png')"
+                  id="mashupTopImage"
+                />
 
-              <p>
-                The iOS app uses Apple's SwiftUI framework and connects to an
-                Express API hosted on Heroku for login and account creation,
-                registering thoughts, and to obtain the latest group, member,
-                and stats data. The Express app utilizes the Tedious library in
-                order to query the SQL Server database. Most of the app
-                functionality is in the form of stored procedures which the
-                Express app triggers.
-              </p>
-            </div>
-            <div class="videoContainerContainer ma-3 elevation-5" width="30%">
-              <div class="videoContainer">
-                <video
-                  height="500"
-                  autoplay
-                  loop
-                  muted="muted"
-                  poster="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.jpg"
-                  class="block"
-                >
-                  <source
-                    type="video/mp4"
-                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4"
-                  />
+                <div class="">
+                  <p>
+                    This was the last project in Harvard's CS50, and one of my
+                    favorites to work on. It involves a combination of a bunch
+                    of technologies, hence the name. The idea is to allow the
+                    user to enter a location by name or zip code and display
+                    news articles atop Google maps.
+                  </p>
 
-                  <source
-                    type="video/webm"
-                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.webm"
-                  />
+                  <h4 class="mb-2">Features & challenges:</h4>
 
-                  Your browser does not support HTML5 video tag.
+                  <p>
+                    The first step was to learn about the Google Maps API as
+                    well Google News. Thankfully the official docs are
+                    well-written and easy to understand. For instance, when it
+                    was available, looking up news was as simple as generating a
+                    URL such as:
+                    <span style="white-space: pre-wrap; word-break: break-all"
+                      >https://news.google.com/news/rss/local/section/geo/02138</span
+                    >
+                  </p>
 
-                  <a
-                    href="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.gif"
-                    >Click here to view original GIF</a
-                  >
-                </video>
+                  <p>
+                    Using the Google Maps JavaScript API is also fairly
+                    straightforward. For example, to initialize a map, you
+                    simply configure the way the canvas looks and set up some
+                    options (like where the map is centered, zoom settings,
+                    etc.) and then run:
+                  </p>
+
+                  <prism language="javascript"
+                    >map = new google.maps.Map(canvas, options);
+                  </prism>
+                </div>
               </div>
+
+              <div class="contentBlock">
+                <img
+                  class="projectImage narrowImage narrowImageLeft float-sm-left rounded-lg elevation-5"
+                  :src="require('@/assets/img/google_maps_2.png')"
+                />
+
+                <div class="">
+                  <p>
+                    To make the form dynamic we used Twitter’s typeahead.js
+                    library. It returns search results asynchronously as the
+                    user begins to type a zip code or location name.
+                  </p>
+
+                  <p>
+                    As a starting point, we were given a text file with U.S.
+                    city, state, and zip code information, delimited with a tab
+                    character (\t), similar to the .csv format. I imported this
+                    into the SQLite database to allow fast lookup, and used
+                    Python & Flask to query it:
+                  </p>
+
+                  <p>
+                    Using the Google Maps JavaScript API is also fairly
+                    straightforward. For example, to initialize a map, you
+                    simply configure the way the canvas looks and set up some
+                    options (like where the map is centered, zoom settings,
+                    etc.) and then run:
+                  </p>
+
+                  <prism language="python"
+                    >q = request.args.get("q") + "*" places =
+                    db.execute('''SELECT * FROM virt_table WHERE virt_table
+                    MATCH :q''', q=q) return jsonify(places)
+                  </prism>
+                </div>
+              </div>
+
+              <div class="contentBlock">
+                <!-- <img
+                  class="projectImage float-sm-right rounded-lg elevation-5"
+                  :src="require('@/assets/img/google_maps_3.png')"
+                /> -->
+
+                <pre>
+                  <prism language="javascript" id="mashupBottomCode" class="mb-3 mt-15 ml-3 float-right" style="height: 500px; max-width: 380px; min-width: 280px;">
+marker.addListener('click', function(event) {
+  howInfo(marker, null, event); 
+  $.getJSON(Url, function(data) {
+    info.open(map, marker); 
+    contentString = "" 
+    for (let i = 0; i &lt; 5; i++) { 
+      articleLink = data[0][i]["link"] 
+      articleTitle = data[0][i]["title"] 
+      contentString += `${articleTitle}` 
+    }
+    contentString += "" showInfo(marker, contentString, event);
+  }); 
+});
+                  </prism>
+                </pre>
+
+                <div class="ma-3">
+                  <p>
+                    Once the user chooses a location, the map is updated with
+                    markers. The user can move around on the map and zoom in and
+                    out, and the markers are updated accordingly. The
+                    addMarker() function chooses a point on the map based on
+                    latitude and longitude found in the database.
+                  </p>
+
+                  <p>
+                    The script sends a GET request via the /update route, after
+                    which the backend (Flask) queries the database and returns
+                    the data in a JSON format via the jsonify function. The
+                    update() function determines the current bounds of the map
+                    based on the current northeast and southwest coordinates in
+                    order to return only the results within the current view.
+                  </p>
+
+                  <p>
+                    Each marker has an event listener which waits for a user to
+                    select it. Once clicked, a marker displays the top 5
+                    articles of the local news. The article data is displayed
+                    using HandlebarsJS, a templating language for JavaScript.
+                  </p>
+
+                  <p>
+                    There is a built-in fallback on Onion articles if no "real"
+                    news articles are available for that particular location
+                    (which explains some of the strange article titles that show
+                    up :).
+                  </p>
+                </div>
+              </div>
+
+              <!-- <div class="contentBlock">
+                <img
+                  class="projectImage float-md-right twoImageRight rounded-lg elevation-5"
+                  :src="require('@/assets/img/gemrover_ebay_3.png')"
+                />
+
+                <img
+                  class="projectImage narrowImage twoImageLeft float-sm-right float-md-left rounded-lg elevation-5"
+                  :src="require('@/assets/img/gemrover_ebay_4.png')"
+                />
+
+                <div class="">
+                  <p>
+                    Adding video to the page and making sure it would load on as
+                    many platforms and in as many browsers as possible was
+                    another interesting challenge - Safari (especially the iOS
+                    version) is pretty finicky when it comes to video formats.
+                  </p>
+
+                  <p>
+                    I chose to use flexbox in combination with media queries to
+                    make the page responsive down to 300px-wide screen sizes.
+                  </p>
+
+                  <p>
+                    Once the Gemrover team started to test and implement the
+                    template, we decided to create several versions of it for
+                    different types of products.
+                  </p>
+
+                  <p>
+                    Here is an example of a variation that uses additional small
+                    images in place of a video:
+                    <a href="https://bit.ly/2Xde7bU" target="_blank"
+                      >https://bit.ly/2Xde7bU</a
+                    >
+                  </p>
+
+                  <p>
+                    And here is a more minimalistic version for products that
+                    only have one image and video:
+                    <a href="https://bit.ly/2IW8PsB" target="_blank"
+                      >https://bit.ly/2IW8PsB</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="contentBlock">
+                <img
+                  class="projectImage float-sm-left rounded-lg elevation-5"
+                  :src="require('@/assets/img/gemrover_website_1.png')"
+                  id="gemroverBottomImage"
+                />
+                <div class="">
+                  <h4 class="mb-2">
+                    Website: Django, Microsoft SQL Server, Docker
+                  </h4>
+
+                  <p>
+                    The next step is to create a full-blown website for the
+                    company. Gemrover uses a somewhat outdated piece of software
+                    called White Diamonds Pro for their inventory, which works
+                    with a Microsoft SQL Server database, and my goal was to
+                    first display these items on the website and eventually add
+                    functionality to enable online sales.
+                  </p>
+
+                  <p>
+                    Given my past experience with Python, I decided to go with
+                    Django as the front-end framework. Setting up SQL Server on
+                    a mac is not very common, and setting up the connection with
+                    Django wasn't trivial. I ended up using a Docker container
+                    for the database, and with the help of Kitematic, Azure Data
+                    Studio, and many hours spent reading the docs, I was able to
+                    create a proof of concept.
+                  </p>
+
+                  <p>
+                    The Gemrover team is currently considering migrating to a
+                    more modern cloud-based solution for the database. There are
+                    several ready-to-go frameworks & services available that
+                    cater directly to diamond, gemstone, and jewelry sales, and
+                    the main factors to consider are:
+                  </p>
+
+                  <ul>
+                    <li>
+                      amount of time it would take to set up the new system
+                    </li>
+                    <li>
+                      how much training the team would need to go through to
+                      complete the migration
+                    </li>
+                    <li>
+                      costs of these 3rd-party services vs. cost of developing a
+                      custom-tailored system from scratch
+                    </li>
+                    <li>
+                      integration with eBay, Rapnet, Amazon,and other online
+                      sales platforms
+                    </li>
+                  </ul>
+                </div>
+              </div> -->
             </div>
           </div>
         </v-expansion-panel-content>
@@ -733,6 +882,9 @@
 <script>
 import "prismjs";
 import "prismjs/components/prism-swift";
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-css";
 import "prismjs/themes/prism-okaidia.css";
 
 import Prism from "vue-prism-component";
@@ -998,6 +1150,49 @@ button span {
   margin: 0 30px 30px 15px;
 }
 
+/* #mashupTopImage {
+  width: 55%;
+  max-height: 470px;
+  height: 100%;
+} */
+
+#mashupBottomCode code {
+  text-align: left !important;
+  white-space: pre !important;
+  word-spacing: normal !important;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  line-height: 1.5 !important;
+  -moz-tab-size: 4 !important;
+  -o-tab-size: 4 !important;
+  tab-size: 4 !important;
+}
+
+/* #mashupBottomCode {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid #f36d33;
+  color: #666;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em 1.5em;
+  display: block;
+  word-wrap: normal;
+  white-space: pre-wrap !important;
+  word-spacing: normal !important;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  line-height: 1.5 !important;
+  -moz-tab-size: 4 !important;
+  -o-tab-size: 4 !important;
+  tab-size: 4 !important;
+} */
+
 .outerVideoContainer {
   min-width: 272px;
   max-width: 700px;
@@ -1032,10 +1227,16 @@ button span {
   font-weight: inherit !important;
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*="language-"] {
   white-space: normal !important;
   word-break: break-word !important;
+  font-size: 13px !important;
+  font-family: monospace !important;
+
+  /* white-space: -moz-pre-wrap !important;
+  white-space: -o-pre-wrap !important;
+  white-space: unset !important;
+  word-wrap: break-word !important; */
 }
 
 .wiggle1 {
@@ -1268,6 +1469,13 @@ pre[class*="language-"] {
     margin-left: 40px;
     margin-bottom: 40px;
   }
+
+  .narrowImageLeft {
+    margin-left: 0;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    min-width: 215px;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -1294,6 +1502,14 @@ pre[class*="language-"] {
   }
   .videoContainerContainer {
     display: block;
+  }
+  #mashupBottomCode {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+    display: block !important;
+    margin: 15px auto !important;
   }
 }
 

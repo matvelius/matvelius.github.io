@@ -3,6 +3,8 @@
     <v-parallax
       :src="require('@/assets/img/parallax14.jpg')"
       :height="parallaxHeight"
+      fade-img-on-scroll
+      scroll-target="#firstProject"
     >
       <v-row align="center" justify="center">
         <v-col
@@ -137,68 +139,12 @@
           </span>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
-          <!-- <div
-            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0 solbeMainContainer"
-            fill-height
+          <div
+            class="verticalVideoOuterContainer my-5 elevation-5"
+            id="firstProject"
+            width="30%"
           >
-            <div class="textContainer solbeTextContainer ma-3" width="70%">
-              <p>
-                Solbe is minimalistic social networking app designed to
-                demonstrate that thoughts really do travel. As various friends
-                and family members pop into your mind throughout the day, Solbe
-                allows you to register these seemingly random occurences with a
-                simple tap. When two people tap each other's names within a
-                certain period of time a <em>connection</em> is recorded and
-                stored in the database for later analysis and to be shown in the
-                Personal Stats tab. Over time users are able to see who they're
-                most <em>"connected"</em> to and how their telepathic skills
-                stack up against those closest to them.
-              </p>
-
-              <p>
-                The iOS app uses Apple's SwiftUI framework and connects to an
-                Express API hosted on Heroku for login and account creation,
-                registering thoughts, and to obtain the latest group, member,
-                and stats data. The Express app utilizes the Tedious library in
-                order to query the SQL Server database. Most of the app
-                functionality is in the form of stored procedures which the
-                Express app triggers.
-              </p>
-            </div>
-            <div class="videoContainerContainer ma-3 elevation-5" width="30%">
-              <div class="solbeVideoContainer">
-                <video
-                  height="500"
-                  autoplay
-                  loop
-                  muted="muted"
-                  poster="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.jpg"
-                  class="block"
-                >
-                  <source
-                    type="video/mp4"
-                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4"
-                  />
-
-                  <source
-                    type="video/webm"
-                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.webm"
-                  />
-
-                  Your browser does not support HTML5 video tag.
-
-                  <a
-                    href="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.gif"
-                    >Click here to view original GIF</a
-                  >
-                </video>
-              </div>
-            </div>
-          </div> -->
-
-          <div class="solbeVideoOuterContainer my-5 elevation-5" width="30%">
-            <!-- <div class="videoContainerContainer elevation-5" width="30%"> -->
-            <div class="solbeVideoContainer">
+            <div class="verticalVideoContainer">
               <video
                 height="500"
                 autoplay
@@ -225,7 +171,6 @@
                 >
               </video>
             </div>
-            <!-- </div> -->
           </div>
           <div class="textContainer solbeTextContainer my-4" width="70%">
             <p>
@@ -312,7 +257,7 @@
                 customize the training session.
               </p>
 
-              <h3>Features & challenges:</h3>
+              <h4 class="mb-2">Features & challenges:</h4>
 
               <p>
                 My goal was to make the piano look as realistic as possible. The
@@ -383,10 +328,167 @@
         </v-expansion-panel-header>
         <v-expansion-panel-content>
           <div
-            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0"
+            class="d-flex justify-space-between flex-wrap py-5 px-0"
             fill-height
           >
-            <div class="textContainer ma-3" width="70%">
+            <div class="panelContent py-5 px-0">
+              <div class="contentBlock">
+                <img
+                  class="projectImage float-sm-right rounded-lg elevation-5"
+                  :src="require('@/assets/img/gemrover_ebay_2.png')"
+                  style="max-height: 590px; width: auto"
+                  id="gemroverTopImage"
+                />
+
+                <div class="">
+                  <p>
+                    Gemrover is a jewelry & gemstone business located in the
+                    heart of the LA Diamond District. Their online business is
+                    growing, and I was hired to help create a template for their
+                    eBay listings as well as a brand new online store.
+                  </p>
+
+                  <h4 class="mb-2">Features & challenges:</h4>
+
+                  <p>
+                    When it comes to eBay templates, scripts are strictly
+                    prohibited, so the page has to be made with pure HTML & CSS
+                    and lives inside an iframe.
+                  </p>
+
+                  <p>
+                    Initially I wanted to make sure the page still has an image
+                    gallery with clickable thumbnails. JavaScript wasn't an
+                    option due to eBay's restrictions, so I used the checkbox /
+                    radio button hack as the workaround:
+                  </p>
+
+                  <prism language="css" id="code"
+                    >#id1:checked ~ #image1 { opacity: 1; animation: gallery .5s
+                    linear; }
+                  </prism>
+
+                  <p>
+                    Live version of the page can be seen here:
+                    <a href="https://bit.ly/2Yf6T3z" target="_blank"
+                      >https://bit.ly/2Yf6T3z</a
+                    >
+                    <br /><br />
+                    And here is the corresponding eBay posting:
+                    <a href="https://ebay.to/2IRYrSl" target="_blank"
+                      >https://ebay.to/2IRYrSl</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="contentBlock">
+                <img
+                  class="projectImage float-md-right twoImageRight rounded-lg elevation-5"
+                  :src="require('@/assets/img/gemrover_ebay_3.png')"
+                />
+
+                <img
+                  class="projectImage narrowImage twoImageLeft float-sm-right float-md-left rounded-lg elevation-5"
+                  :src="require('@/assets/img/gemrover_ebay_4.png')"
+                />
+
+                <div class="">
+                  <p>
+                    Adding video to the page and making sure it would load on as
+                    many platforms and in as many browsers as possible was
+                    another interesting challenge - Safari (especially the iOS
+                    version) is pretty finicky when it comes to video formats.
+                  </p>
+
+                  <p>
+                    I chose to use flexbox in combination with media queries to
+                    make the page responsive down to 300px-wide screen sizes.
+                  </p>
+
+                  <p>
+                    Once the Gemrover team started to test and implement the
+                    template, we decided to create several versions of it for
+                    different types of products.
+                  </p>
+
+                  <p>
+                    Here is an example of a variation that uses additional small
+                    images in place of a video:
+                    <a href="https://bit.ly/2Xde7bU" target="_blank"
+                      >https://bit.ly/2Xde7bU</a
+                    >
+                  </p>
+
+                  <p>
+                    And here is a more minimalistic version for products that
+                    only have one image and video:
+                    <a href="https://bit.ly/2IW8PsB" target="_blank"
+                      >https://bit.ly/2IW8PsB</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="contentBlock">
+                <img
+                  class="projectImage float-sm-left rounded-lg elevation-5"
+                  :src="require('@/assets/img/gemrover_website_1.png')"
+                  id="gemroverBottomImage"
+                />
+                <div class="">
+                  <h4 class="mb-2">
+                    Website: Django, Microsoft SQL Server, Docker
+                  </h4>
+
+                  <p>
+                    The next step is to create a full-blown website for the
+                    company. Gemrover uses a somewhat outdated piece of software
+                    called White Diamonds Pro for their inventory, which works
+                    with a Microsoft SQL Server database, and my goal was to
+                    first display these items on the website and eventually add
+                    functionality to enable online sales.
+                  </p>
+
+                  <p>
+                    Given my past experience with Python, I decided to go with
+                    Django as the front-end framework. Setting up SQL Server on
+                    a mac is not very common, and setting up the connection with
+                    Django wasn't trivial. I ended up using a Docker container
+                    for the database, and with the help of Kitematic, Azure Data
+                    Studio, and many hours spent reading the docs, I was able to
+                    create a proof of concept.
+                  </p>
+
+                  <p>
+                    The Gemrover team is currently considering migrating to a
+                    more modern cloud-based solution for the database. There are
+                    several ready-to-go frameworks & services available that
+                    cater directly to diamond, gemstone, and jewelry sales, and
+                    the main factors to consider are:
+                  </p>
+
+                  <ul>
+                    <li>
+                      amount of time it would take to set up the new system
+                    </li>
+                    <li>
+                      how much training the team would need to go through to
+                      complete the migration
+                    </li>
+                    <li>
+                      costs of these 3rd-party services vs. cost of developing a
+                      custom-tailored system from scratch
+                    </li>
+                    <li>
+                      integration with eBay, Rapnet, Amazon,and other online
+                      sales platforms
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="textContainer ma-3" width="70%">
               <p>
                 The Piano Notes Trainer app is designed to supplement piano
                 lessons and help students learn to find and recognize notes on
@@ -441,7 +543,7 @@
                   >
                 </video>
               </div>
-            </div>
+            </div> -->
           </div>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -811,6 +913,10 @@ button span {
   transition: all 2.8s;
 }
 
+.contentBlock:not(:first-of-type) {
+  margin: 85px 0;
+}
+
 .videoContainerContainer {
   min-width: 281px;
   max-height: 499px;
@@ -826,7 +932,7 @@ button span {
   overflow-wrap: anywhere;
 }
 
-.solbeVideoOuterContainer {
+.verticalVideoOuterContainer {
   width: 280px;
   border-radius: 5px;
   overflow: hidden;
@@ -834,11 +940,11 @@ button span {
   margin-left: 15px;
 }
 
-.solbeVideoContainer {
+.verticalVideoContainer {
   max-height: 499px;
 }
 
-.solbeVideoContainer video {
+.verticalVideoContainer video {
   transform: translateY(-1px) scale(1.0005);
 }
 
@@ -863,20 +969,33 @@ button span {
   transform: scale(1.003);
 }
 
-.oval {
-  width: 400px;
-  height: 250px;
-  background: MediumPurple;
-  color: #111;
-
-  text-align: center;
-  font-size: 90px;
-  float: right;
-  shape-outside: content-box;
+.projectImage {
+  width: 55%;
+  margin: 5px 15px;
 }
-.asdf {
-  padding-top: 70px;
-  display: inline-block;
+
+.narrowImage {
+  width: 30%;
+}
+
+.projectImage:hover {
+  /* opacity: .95; */
+  transform: scale(1.005);
+  transition: all 0.4s;
+  /* box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, 0.95);
+    border-radius: 10px; */
+}
+
+.twoImageLeft {
+  max-width: 265px;
+}
+
+.twoImageRight {
+  max-width: 410px;
+}
+
+#gemroverBottomImage {
+  margin: 0 30px 30px 15px;
 }
 
 .outerVideoContainer {
@@ -1118,10 +1237,54 @@ pre[class*="language-"] {
   min-height: 97px !important;
 }
 
+@media screen and (max-width: 1005px) {
+  .twoImageLeft {
+    max-width: 300px;
+    margin: 0 90px 30px 0;
+  }
+
+  .twoImageRight {
+    max-width: 472px;
+    margin: 0 0 30px 40px;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .twoImageLeft {
+    max-width: 280px;
+    margin: 0 0 0 15px;
+  }
+
+  .twoImageRight {
+    display: block;
+    margin: 50px auto;
+    margin-top: -40px;
+  }
+
+  #gemroverBottomImage {
+    margin: 0 40px 40px 0;
+  }
+  .narrowImage {
+    margin-left: 40px;
+    margin-bottom: 40px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .outerVideoContainer {
     margin: 20px auto;
     float: none;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  #gemroverTopImage {
+    width: 100% !important;
+    max-width: 623px !important;
+    height: auto !important;
+    margin: 30px auto !important;
+    display: block;
+    float: none !important;
   }
 }
 
@@ -1131,6 +1294,32 @@ pre[class*="language-"] {
   }
   .videoContainerContainer {
     display: block;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .twoImageLeft {
+    max-width: 300px;
+    width: 35%;
+    margin: 0;
+  }
+
+  .twoImageRight {
+    display: inline-block;
+    width: 56%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .projectImage {
+    width: 100%;
+    margin: 30px auto !important;
+    display: block;
+  }
+  .narrowImage {
+    width: 80%;
+    margin: 30px auto;
   }
 }
 
@@ -1152,13 +1341,13 @@ pre[class*="language-"] {
 }
 
 @media screen and (max-width: 530px) {
-  .solbeVideoOuterContainer {
+  .verticalVideoOuterContainer {
     /* width: 280px; */
     margin: 25px auto !important;
     float: none;
   }
   .v-expansion-panel-content__wrap {
-    padding: 10px !important;
+    padding: 14px !important;
   }
 }
 

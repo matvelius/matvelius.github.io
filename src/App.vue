@@ -19,7 +19,7 @@
               <h3 class="font-weight-regular">Software Developer</h3>
             </div>
 
-            <div class="bottomContainer d-flex align-center flex-wrap">
+            <div class="bottomContainer">
               <!-- <h4>
                 <span class="font-weight-regular text-decoration-underline">
                   Expertise</span
@@ -109,17 +109,33 @@
           </div>
 
           <div
-            class="rightContainer d-flex justify-space-around align-center px-6 mx-n1"
+            class="rightContainer d-flex justify-space-around align-center px-sm-6 mx-n1"
           >
-            <v-btn small color="white" class="contactButton">
-              <v-icon left> mdi-linkedin </v-icon>
+            <v-btn
+              :small="$vuetify.breakpoint.smAndUp"
+              :x-small="$vuetify.breakpoint.smAndDown"
+              color="white"
+              class="contactButton"
+            >
+              <v-icon left class="contactButtonIcon"> mdi-linkedin </v-icon>
               <span>LinkedIn</span>
             </v-btn>
-            <v-btn small color="white" class="contactButton">
-              <v-icon left> mdi-github </v-icon><span>Github</span>
+            <v-btn
+              :small="$vuetify.breakpoint.smAndUp"
+              :x-small="$vuetify.breakpoint.smAndDown"
+              color="white"
+              class="contactButton"
+            >
+              <v-icon left class="contactButtonIcon"> mdi-github </v-icon
+              ><span>Github</span>
             </v-btn>
-            <v-btn small color="white" class="contactButton">
-              <v-icon left> mdi-email </v-icon>
+            <v-btn
+              :small="$vuetify.breakpoint.smAndUp"
+              :x-small="$vuetify.breakpoint.smAndDown"
+              color="white"
+              class="contactButton"
+            >
+              <v-icon left class="contactButtonIcon"> mdi-email </v-icon>
               <span>E-mail</span>
             </v-btn>
           </div>
@@ -655,116 +671,10 @@ marker.addListener('click', function(event) {
                     There is a built-in fallback on Onion articles if no "real"
                     news articles are available for that particular location
                     (which explains some of the strange article titles that show
-                    up :).
+                    up :)).
                   </p>
                 </div>
               </div>
-
-              <!-- <div class="contentBlock">
-                <img
-                  class="projectImage float-md-right twoImageRight rounded-lg elevation-5"
-                  :src="require('@/assets/img/gemrover_ebay_3.png')"
-                />
-
-                <img
-                  class="projectImage narrowImage twoImageLeft float-sm-right float-md-left rounded-lg elevation-5"
-                  :src="require('@/assets/img/gemrover_ebay_4.png')"
-                />
-
-                <div class="">
-                  <p>
-                    Adding video to the page and making sure it would load on as
-                    many platforms and in as many browsers as possible was
-                    another interesting challenge - Safari (especially the iOS
-                    version) is pretty finicky when it comes to video formats.
-                  </p>
-
-                  <p>
-                    I chose to use flexbox in combination with media queries to
-                    make the page responsive down to 300px-wide screen sizes.
-                  </p>
-
-                  <p>
-                    Once the Gemrover team started to test and implement the
-                    template, we decided to create several versions of it for
-                    different types of products.
-                  </p>
-
-                  <p>
-                    Here is an example of a variation that uses additional small
-                    images in place of a video:
-                    <a href="https://bit.ly/2Xde7bU" target="_blank"
-                      >https://bit.ly/2Xde7bU</a
-                    >
-                  </p>
-
-                  <p>
-                    And here is a more minimalistic version for products that
-                    only have one image and video:
-                    <a href="https://bit.ly/2IW8PsB" target="_blank"
-                      >https://bit.ly/2IW8PsB</a
-                    >
-                  </p>
-                </div>
-              </div>
-
-              <div class="contentBlock">
-                <img
-                  class="projectImage float-sm-left rounded-lg elevation-5"
-                  :src="require('@/assets/img/gemrover_website_1.png')"
-                  id="gemroverBottomImage"
-                />
-                <div class="">
-                  <h4 class="mb-2">
-                    Website: Django, Microsoft SQL Server, Docker
-                  </h4>
-
-                  <p>
-                    The next step is to create a full-blown website for the
-                    company. Gemrover uses a somewhat outdated piece of software
-                    called White Diamonds Pro for their inventory, which works
-                    with a Microsoft SQL Server database, and my goal was to
-                    first display these items on the website and eventually add
-                    functionality to enable online sales.
-                  </p>
-
-                  <p>
-                    Given my past experience with Python, I decided to go with
-                    Django as the front-end framework. Setting up SQL Server on
-                    a mac is not very common, and setting up the connection with
-                    Django wasn't trivial. I ended up using a Docker container
-                    for the database, and with the help of Kitematic, Azure Data
-                    Studio, and many hours spent reading the docs, I was able to
-                    create a proof of concept.
-                  </p>
-
-                  <p>
-                    The Gemrover team is currently considering migrating to a
-                    more modern cloud-based solution for the database. There are
-                    several ready-to-go frameworks & services available that
-                    cater directly to diamond, gemstone, and jewelry sales, and
-                    the main factors to consider are:
-                  </p>
-
-                  <ul>
-                    <li>
-                      amount of time it would take to set up the new system
-                    </li>
-                    <li>
-                      how much training the team would need to go through to
-                      complete the migration
-                    </li>
-                    <li>
-                      costs of these 3rd-party services vs. cost of developing a
-                      custom-tailored system from scratch
-                    </li>
-                    <li>
-                      integration with eBay, Rapnet, Amazon,and other online
-                      sales platforms
-                    </li>
-                  </ul>
-                </div>
-              </div> -->
             </div>
           </div>
         </v-expansion-panel-content>
@@ -779,65 +689,154 @@ marker.addListener('click', function(event) {
           </span>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
-          <div
-            class="d-flex justify-space-between flex-wrap flex-sm-nowrap py-5 px-0"
-            fill-height
-          >
-            <div class="textContainer ma-3" width="70%">
-              <p>
-                The Piano Notes Trainer app is designed to supplement piano
-                lessons and help students learn to find and recognize notes on
-                the piano as well as the musical staff. Piano Notes Trainer
-                includes a LEARN section and an interactive PLAY SECTION. The
-                LEARN section consists of slides that introduce the student to
-                the piano keyboard, as well as basic music theory and the
-                fundamentals of music notation. The PLAY section allows the
-                students to practice their note-naming and note-finding skills
-                in a game-like manner. The goal is to get the answers right
-                consistently (just like a real piece of music would require) in
-                order to earn points, stars, and pass levels. There is a
-                FREEPLAY section designed for teachers, parents, and more
-                advanced students who need to customize the training session.
-              </p>
+          <div class="" fill-height>
+            <div class="panelContent py-5 px-0">
+              <div class="contentBlock">
+                <img
+                  class="projectImage float-sm-right rounded-lg elevation-5"
+                  :src="require('@/assets/img/finance_1.png')"
+                  id="financeTopImage"
+                />
 
-              <p>
-                The iOS app uses Apple's SwiftUI framework and connects to an
-                Express API hosted on Heroku for login and account creation,
-                registering thoughts, and to obtain the latest group, member,
-                and stats data. The Express app utilizes the Tedious library in
-                order to query the SQL Server database. Most of the app
-                functionality is in the form of stored procedures which the
-                Express app triggers.
-              </p>
-            </div>
+                <div class="">
+                  <p>
+                    Another project from Harvard's CS50, this application allows
+                    the user to create an account, get real-time stock quotes,
+                    and simulate buying and selling stocks. The app is very
+                    generous: every new user gets $10,000 to play with!
+                  </p>
 
-            <div class="videoContainerContainer ma-3 elevation-5" width="30%">
-              <div class="videoContainer">
-                <video
-                  height="500"
-                  autoplay
-                  loop
-                  muted="muted"
-                  poster="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.jpg"
-                  class="block"
-                >
-                  <source
-                    type="video/mp4"
-                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4"
-                  />
+                  <h4 class="mb-2">Features & challenges:</h4>
 
-                  <source
-                    type="video/webm"
-                    src="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.webm"
-                  />
+                  <p>
+                    When a new user registers, we first check to see if the
+                    username is already taken:
+                  </p>
 
-                  Your browser does not support HTML5 video tag.
+                  <p>
+                    Using the Google Maps JavaScript API is also fairly
+                    straightforward. For example, to initialize a map, you
+                    simply configure the way the canvas looks and set up some
+                    options (like where the map is centered, zoom settings,
+                    etc.) and then run:
+                  </p>
 
-                  <a
-                    href="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.gif"
-                    >Click here to view original GIF</a
-                  >
-                </video>
+                  <pre>
+                    <prism language="python">
+  rows = db.execute("SELECT * FROM users WHERE username = :username", username=request.form.get("username")) 
+  if len(rows) == 1: 
+    if rows[0]['username'] ==
+      request.form.get("username"): return apology("this username is already taken", 400)
+                    </prism>
+                  </pre>
+
+                  <p>
+                    Once the user input is validated, the password is hashed and
+                    the new user is added to the database:
+                  </p>
+
+                  <pre>
+                    <prism language="python">
+hash = generate_password_hash(request.form.get("password"))
+
+session["user_id"] = db.execute("INSERT INTO users (username, hash) VALUES (:username, :hash)",
+username=request.form.get("username"), hash=hash)
+                    </prism>
+                  </pre>
+                </div>
+              </div>
+
+              <div class="contentBlock">
+                <img
+                  class="projectImage float-sm-left rounded-lg elevation-5"
+                  :src="require('@/assets/img/finance_2.png')"
+                />
+
+                <div class="">
+                  <p>
+                    Once logged in, the user is presented with a list of the
+                    stocks he/she owns and the total balance based on current
+                    stock prices and amount of cash in the account. Financial
+                    data is stored as a series of transactions in the database,
+                    which is retrieved as follows:
+                  </p>
+
+                  <pre>
+                    <prism language="python">
+stocks_owned = db.execute("SELECT transactions.symbol, SUM(transactions.shares) AS 
+    shares FROM transactions WHERE user_id=:id GROUP BY transactions.symbol",
+    id=session["user_id"])
+
+    for index, stock in enumerate(stocks_owned):
+        this_stock_info = lookup(stock['symbol'])
+        stocks_owned[index]['name'] = this_stock_info['name']
+        stocks_owned[index]['price'] = usd(this_stock_info['price'])
+        stocks_owned[index]['total'] = usd(this_stock_info['price'] * stock['shares'])
+        total_value += this_stock_info['price'] * stock['shares']
+                    </prism>
+                  </pre>
+
+                  <p>
+                    In order to get a quote for or trade a specific stock, we
+                    make a call to the IEX Trading API using Python's requests
+                    and urllib.parse libraries and a URL like this:
+                    "https://cloud.iexapis.com/stable/stock/{urllib.parse.quote_plus(symbol)}/quote?token={myToken}"
+                  </p>
+                </div>
+              </div>
+
+              <div class="contentBlock">
+                <img
+                  class="projectImage float-sm-right rounded-lg elevation-5"
+                  :src="require('@/assets/img/finance_3.png')"
+                />
+
+                <div class="">
+                  <p>
+                    All errors, such as invalid logins, misspelled stock
+                    symbols, and insufficient funds, are handled in the most
+                    professional and user-friendly manner possible -- with the
+                    use of the grumpy cat meme, of course.
+                  </p>
+
+                  <p>
+                    We define the errorhandler method, which takes in the "e"
+                    parameter (for "error") and responds with an apology.
+                  </p>
+
+                  <pre>
+                    <prism language="python">
+def errorhandler(e):
+    """Handle error"""
+    return apology(e.name, e.code)
+                    </prism>
+                  </pre>
+
+                  <p>
+                    The apology method generates an apology.html page using a
+                    call to http://memegen.link/ with the appropriate top and
+                    bottom strings.
+                  </p>
+
+                  <pre>
+                    <prism language="python">
+def apology(message, code=400):
+    def escape(s):
+        """Escape special characters: https://github.com/jacebrowning/memegen#special-characters"""
+        for old, new in [("-", "--"), (" ", "-"), ("_", "__"), ("?", "~q"),
+                         ("%", "~p"), ("#", "~h"), ("/", "~s"), ("\"", "''")]:
+            s = s.replace(old, new)
+        return s
+    return render_template("apology.html", top=code, bottom=escape(message)), code
+                    </prism>
+                  </pre>
+
+                  <p>
+                    Other functionality of the Finance website includes
+                    transaction history and a user settings page where the user
+                    can change his or her password.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -845,7 +844,7 @@ marker.addListener('click', function(event) {
       </v-expansion-panel>
     </v-expansion-panels>
 
-    <v-speed-dial
+    <!-- <v-speed-dial
       fixed
       v-model="fab"
       :top="top"
@@ -863,7 +862,6 @@ marker.addListener('click', function(event) {
             :src="require('@/assets/img/Matvey Kostukovsky stack.png')"
             class="photo"
           />
-          <!-- <v-icon v-else> mdi-account-circle </v-icon> -->
         </v-btn>
       </template>
       <v-btn fab dark small color="green">
@@ -875,7 +873,7 @@ marker.addListener('click', function(event) {
       <v-btn fab dark small color="red">
         <v-icon>mdi-delete</v-icon>
       </v-btn>
-    </v-speed-dial>
+    </v-speed-dial> -->
   </v-app>
 </template>
 
@@ -1035,6 +1033,12 @@ export default {
   margin: -20px;
 }
 
+.bottomContainer {
+  display: flex;
+  align-items: center !important;
+  /* margin-top: -50px; */
+}
+
 .banner {
   height: 125px;
   display: flex !important;
@@ -1156,6 +1160,11 @@ button span {
   height: 100%;
 } */
 
+#financeTopImage {
+  max-width: 400px;
+}
+
+pre code,
 #mashupBottomCode code {
   text-align: left !important;
   white-space: pre !important;
@@ -1543,16 +1552,26 @@ code[class*="language-"] {
   #main {
     padding: 0px;
   }
+  .parallaxContainer {
+    padding: 3px !important;
+  }
   .leftContainer {
     width: 100%;
   }
   .bottomContainer {
     width: 100%;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-end !important;
+    margin-top: -50px;
   }
   .rightContainer {
     flex-direction: row;
     width: 100%;
+    box-shadow: none !important;
+  }
+
+  .rightContainer::before {
+    box-shadow: none !important;
   }
 }
 
@@ -1564,6 +1583,15 @@ code[class*="language-"] {
   }
   .v-expansion-panel-content__wrap {
     padding: 14px !important;
+  }
+}
+
+@media screen and (max-width: 459px) {
+  .contactButton {
+    width: 95px;
+  }
+  .contactButtonIcon {
+    font-size: 17px !important;
   }
 }
 

@@ -15,7 +15,7 @@
             class="leftContainer d-flex flex-column justify-space-between flex-wrap"
           >
             <div class="topContainer">
-              <h1 class="font-weight-medium">Matvey Kostukovsky</h1>
+              <h1 class="font-weight-medium" id="myName">Matvey Kostukovsky</h1>
               <h3 class="font-weight-regular">Software Developer</h3>
             </div>
 
@@ -312,6 +312,12 @@
               stats data. The Express app utilizes the Tedious library in order
               to query the SQL Server database. Most of the app functionality is
               in the form of stored procedures which the Express app triggers.
+              The iOS app takes care of basic front-end validation of user
+              input, and most of the app's business logic is in SQL, with some
+              additional filtering taking place on the Express server. One of
+              the reasons I decided to take this approach was to make it easier
+              to create the Android and web apps in the future, if we decide to
+              do so.
             </p>
 
             <p>
@@ -1086,6 +1092,11 @@ export default {
 </script>
 
 <style>
+body,
+#main {
+  font-family: "Quicksand", sans-serif !important;
+}
+
 #main {
   max-width: 1200px;
   margin: 0 auto;
@@ -1113,6 +1124,10 @@ export default {
   filter: blur(2px);
   /* top: -3382px; */
   /* left: -50%; */
+}
+
+#myName {
+  color: #000;
 }
 
 .leftContainer {
@@ -1241,13 +1256,18 @@ button span {
 }
 
 .roundedVideoContainer .videoContainer video {
-  transform: scale(1.003);
+  transform: scale(1.004) !important;
   shape-outside: url(https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.mp4);
   float: left;
 }
 
 .pianoAppVideo {
   transform: scale(1.003);
+  -webkit-border-radius: 11px !important;
+  -khtml-border-radius: 11px !important;
+  -moz-border-radius: 11px !important;
+  border-radius: 11px !important;
+  overflow: hidden;
 }
 
 .projectImage {
@@ -1335,6 +1355,9 @@ button span {
   shape-outside: margin-box;
   margin-right: 30px;
   margin-bottom: 25px;
+  -webkit-border-radius: 11px !important;
+  -khtml-border-radius: 11px !important;
+  -moz-border-radius: 11px !important;
   border-radius: 11px !important;
   overflow: hidden;
 }
@@ -1712,13 +1735,14 @@ a:active {
   .twoImageLeft {
     max-width: 300px;
     width: 35%;
-    margin: 0;
+    margin: 0 0 15px 15px;
   }
 
   .twoImageRight {
-    display: inline-block;
+    display: block;
+    float: none;
     width: 56%;
-    margin: 0;
+    margin: 30px auto;
   }
 }
 

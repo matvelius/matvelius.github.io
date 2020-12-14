@@ -26,7 +26,7 @@
                 >:
               </h4> -->
 
-              <v-tooltip top>
+              <v-tooltip :top="showTooltipOnTop" :left="!showTooltipOnTop">
                 <template v-slot:activator="{ on, attrs }">
                   <v-chip
                     v-bind="attrs"
@@ -52,7 +52,7 @@
                 </div>
               </v-tooltip>
 
-              <v-tooltip top>
+              <v-tooltip :top="showTooltipOnTop" :left="!showTooltipOnTop">
                 <template v-slot:activator="{ on, attrs }">
                   <v-chip
                     v-bind="attrs"
@@ -78,7 +78,7 @@
                 </div>
               </v-tooltip>
 
-              <v-tooltip top>
+              <v-tooltip :top="showTooltipOnTop" :left="!showTooltipOnTop">
                 <template v-slot:activator="{ on, attrs }">
                   <v-chip
                     v-bind="attrs"
@@ -111,33 +111,53 @@
           <div
             class="rightContainer d-flex justify-space-around align-center px-sm-6 mx-n1"
           >
-            <v-btn
-              :small="$vuetify.breakpoint.smAndUp"
-              :x-small="$vuetify.breakpoint.smAndDown"
-              color="white"
-              class="contactButton"
+            <a
+              href="https://www.linkedin.com/in/matvey-kostukovsky/"
+              target="_blank"
             >
-              <v-icon left class="contactButtonIcon"> mdi-linkedin </v-icon>
-              <span>LinkedIn</span>
-            </v-btn>
-            <v-btn
-              :small="$vuetify.breakpoint.smAndUp"
-              :x-small="$vuetify.breakpoint.smAndDown"
-              color="white"
-              class="contactButton"
-            >
-              <v-icon left class="contactButtonIcon"> mdi-github </v-icon
-              ><span>Github</span>
-            </v-btn>
-            <v-btn
-              :small="$vuetify.breakpoint.smAndUp"
-              :x-small="$vuetify.breakpoint.smAndDown"
-              color="white"
-              class="contactButton"
-            >
-              <v-icon left class="contactButtonIcon"> mdi-email </v-icon>
-              <span>E-mail</span>
-            </v-btn>
+              <v-btn
+                :small="$vuetify.breakpoint.smAndUp"
+                :x-small="$vuetify.breakpoint.smAndDown"
+                color="white"
+                class="contactButton"
+              >
+                <v-icon left class="contactButtonIcon"> mdi-linkedin </v-icon>
+                <span class="contactButtonText">LinkedIn</span>
+              </v-btn>
+            </a>
+
+            <a href="https://github.com/matvelius" target="_blank">
+              <v-btn
+                :small="$vuetify.breakpoint.smAndUp"
+                :x-small="$vuetify.breakpoint.smAndDown"
+                color="white"
+                class="contactButton"
+              >
+                <v-icon left class="contactButtonIcon"> mdi-github </v-icon
+                ><span class="contactButtonText">Github</span>
+              </v-btn>
+            </a>
+
+            <v-tooltip top>
+              <template v-slot:activator="{ on, attrs }">
+                <a
+                  href="mailto: email@matveycodes.com"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  <v-btn
+                    :small="$vuetify.breakpoint.smAndUp"
+                    :x-small="$vuetify.breakpoint.smAndDown"
+                    color="white"
+                    class="contactButton"
+                  >
+                    <v-icon left class="contactButtonIcon"> mdi-email </v-icon>
+                    <span class="contactButtonText">E-mail</span>
+                  </v-btn>
+                </a>
+              </template>
+              <div>email@matveycodes.com</div>
+            </v-tooltip>
           </div>
         </v-col>
       </v-row>
@@ -919,6 +939,7 @@ export default {
         x: 0,
         y: 0,
       },
+      showTooltipOnTop: true,
     };
   },
 
@@ -965,11 +986,12 @@ export default {
     onResize() {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight };
       if (window.innerWidth <= 558) {
+        this.showTooltipOnTop = false;
         this.parallaxHeight = 290;
       } else {
+        this.showTooltipOnTop = true;
         this.parallaxHeight = 260;
       }
-      console.log(this.parallaxHeight);
     },
   },
 
@@ -1065,6 +1087,10 @@ button span {
 
 .contactButton {
   width: 119px;
+}
+
+.contactButtonText {
+  text-decoration: none !important;
 }
 
 .photo {
@@ -1267,6 +1293,19 @@ pre code,
   -moz-tab-size: 4 !important;
   -o-tab-size: 4 !important;
   tab-size: 4 !important;
+}
+
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
 }
 
 .wiggle1 {

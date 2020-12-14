@@ -352,7 +352,7 @@
         <v-expansion-panel-header>
           <span>
             <strong>Gemrover eBay Template & Website: </strong>
-            HTML5, CSS, and lots of flexbox
+            HTML, CSS, and lots of flexbox
           </span>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -532,7 +532,7 @@
         <v-expansion-panel-header>
           <span>
             <strong>Mashup - Local News Articles on Google Maps: </strong>
-            Python & Flask, AJAX, jQuery, HTML & CSS, SQLite 3, Google Maps API
+            Python & Flask, SQLite 3, Google Maps API, AJAX, HTML & CSS, jQuery
           </span>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -685,7 +685,7 @@ marker.addListener('click', function(event) {
         <v-expansion-panel-header>
           <span>
             <strong>Finance - Stock Quotes & Trading: </strong>
-            IEX Trading API, Python & Flask, SQLite 3 & phpLiteAdmin
+            IEX Trading API, Python & Flask, SQLite 3 & phpLiteAdmin, Bootstrap
           </span>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -702,28 +702,26 @@ marker.addListener('click', function(event) {
                   <p>
                     Another project from Harvard's CS50, this application allows
                     the user to create an account, get real-time stock quotes,
-                    and simulate buying and selling stocks. The app is very
-                    generous: every new user gets $10,000 to play with!
+                    and simulate buying and selling stocks via API calls to IEX
+                    Trading. Data is stored using SQLite, and the front-end is
+                    written in Python & Flask to keep things simple and
+                    light-weight. The app is very generous: every new user gets
+                    $10,000 to play with!
                   </p>
 
                   <h4 class="mb-2">Features & challenges:</h4>
 
                   <p>
-                    When a new user registers, we first check to see if the
-                    username is already taken:
-                  </p>
-
-                  <p>
-                    Using the Google Maps JavaScript API is also fairly
-                    straightforward. For example, to initialize a map, you
-                    simply configure the way the canvas looks and set up some
-                    options (like where the map is centered, zoom settings,
-                    etc.) and then run:
+                    When a new user registers (and the username and password
+                    fields have been validated on the front-end), we first make
+                    a call to check whether or not the username is already
+                    taken:
                   </p>
 
                   <pre>
-                    <prism language="python">
-  rows = db.execute("SELECT * FROM users WHERE username = :username", username=request.form.get("username")) 
+                    <prism language="python" id="financeCode1" class="">
+rows = db.execute("SELECT * FROM users WHERE username = :username", username=request.form.get("username")) 
+
   if len(rows) == 1: 
     if rows[0]['username'] ==
       request.form.get("username"): return apology("this username is already taken", 400)
@@ -731,12 +729,13 @@ marker.addListener('click', function(event) {
                   </pre>
 
                   <p>
-                    Once the user input is validated, the password is hashed and
-                    the new user is added to the database:
+                    Once we have made sure that the username doesn't already
+                    exist in our database, the password is hashed and the new
+                    user is added to the database:
                   </p>
 
                   <pre>
-                    <prism language="python">
+                    <prism language="python" id="financeCode2" class="">
 hash = generate_password_hash(request.form.get("password"))
 
 session["user_id"] = db.execute("INSERT INTO users (username, hash) VALUES (:username, :hash)",
@@ -750,19 +749,25 @@ username=request.form.get("username"), hash=hash)
                 <img
                   class="projectImage float-sm-left rounded-lg elevation-5"
                   :src="require('@/assets/img/finance_2.png')"
+                  id="financeSecondImage"
                 />
 
                 <div class="">
                   <p>
-                    Once logged in, the user is presented with a list of the
-                    stocks he/she owns and the total balance based on current
-                    stock prices and amount of cash in the account. Financial
-                    data is stored as a series of transactions in the database,
-                    which is retrieved as follows:
+                    Once logged in, the user is presented with menu of options
+                    that outline the apps various features; the first view is a
+                    list of the stocks he/she owns and the total balance based
+                    on current stock prices and amount of cash in the account.
+                    The styling is done using Bootstrap classes.
+                  </p>
+
+                  <p>
+                    Financial data is stored as a series of transactions in the
+                    database, which is retrieved as follows:
                   </p>
 
                   <pre>
-                    <prism language="python">
+                    <prism language="python" id="financeCode2" class="">
 stocks_owned = db.execute("SELECT transactions.symbol, SUM(transactions.shares) AS 
     shares FROM transactions WHERE user_id=:id GROUP BY transactions.symbol",
     id=session["user_id"])
@@ -789,6 +794,7 @@ stocks_owned = db.execute("SELECT transactions.symbol, SUM(transactions.shares) 
                 <img
                   class="projectImage float-sm-right rounded-lg elevation-5"
                   :src="require('@/assets/img/finance_3.png')"
+                  id="financeLastImage"
                 />
 
                 <div class="">
@@ -805,7 +811,7 @@ stocks_owned = db.execute("SELECT transactions.symbol, SUM(transactions.shares) 
                   </p>
 
                   <pre>
-                    <prism language="python">
+                    <prism language="python" id="financeCode3" class="">
 def errorhandler(e):
     """Handle error"""
     return apology(e.name, e.code)
@@ -819,7 +825,7 @@ def errorhandler(e):
                   </p>
 
                   <pre>
-                    <prism language="python">
+                    <prism language="python" id="financeCode3" class="">
 def apology(message, code=400):
     def escape(s):
         """Escape special characters: https://github.com/jacebrowning/memegen#special-characters"""
@@ -1161,20 +1167,15 @@ button span {
 } */
 
 #financeTopImage {
-  max-width: 400px;
+  max-width: 412px;
 }
 
-pre code,
-#mashupBottomCode code {
-  text-align: left !important;
-  white-space: pre !important;
-  word-spacing: normal !important;
-  word-break: normal !important;
-  word-wrap: normal !important;
-  line-height: 1.5 !important;
-  -moz-tab-size: 4 !important;
-  -o-tab-size: 4 !important;
-  tab-size: 4 !important;
+#financeSecondImage {
+  width: 64%;
+}
+
+#financeLastImage {
+  width: 33%;
 }
 
 /* #mashupBottomCode {
@@ -1236,6 +1237,10 @@ pre code,
   font-weight: inherit !important;
 }
 
+code {
+  width: 100% !important;
+}
+
 code[class*="language-"] {
   white-space: normal !important;
   word-break: break-word !important;
@@ -1246,6 +1251,22 @@ code[class*="language-"] {
   white-space: -o-pre-wrap !important;
   white-space: unset !important;
   word-wrap: break-word !important; */
+}
+
+pre code,
+#financeCode1 code,
+#financeCode2 code,
+#financeCode3 code,
+#mashupBottomCode code {
+  text-align: left !important;
+  white-space: pre !important;
+  word-spacing: normal !important;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  line-height: 1.5 !important;
+  -moz-tab-size: 4 !important;
+  -o-tab-size: 4 !important;
+  tab-size: 4 !important;
 }
 
 .wiggle1 {
@@ -1447,6 +1468,28 @@ code[class*="language-"] {
   min-height: 97px !important;
 }
 
+@media screen and (max-width: 1120px) {
+  #financeCode1 {
+    width: 60%;
+  }
+  #financeTopImage {
+    max-width: 340px;
+  }
+  #financeSecondImage {
+    float: right !important;
+    margin: 0 0 15px 15px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  #financeSecondImage {
+    width: 70%;
+  }
+  #financeCode2 {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 1005px) {
   .twoImageLeft {
     max-width: 300px;
@@ -1456,6 +1499,14 @@ code[class*="language-"] {
   .twoImageRight {
     max-width: 472px;
     margin: 0 0 30px 40px;
+  }
+  #financeCode1 {
+    width: 100%;
+  }
+  #financeTopImage {
+    max-width: 412px;
+    float: left !important;
+    margin: 0 15px 15px 0 !important;
   }
 }
 
@@ -1491,6 +1542,9 @@ code[class*="language-"] {
   .outerVideoContainer {
     margin: 20px auto;
     float: none;
+  }
+  #financeLastImage {
+    width: 50%;
   }
 }
 
@@ -1536,6 +1590,15 @@ code[class*="language-"] {
   }
 }
 
+@media screen and (max-width: 700px) {
+  #financeLastImage {
+    margin-bottom: 15px;
+  }
+  #financeCode3 {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .projectImage {
     width: 100%;
@@ -1545,6 +1608,13 @@ code[class*="language-"] {
   .narrowImage {
     width: 80%;
     margin: 30px auto;
+  }
+  #financeTopImage,
+  #financeSecondImage,
+  #financeLastImage {
+    float: none !important;
+    margin: 30px auto !important;
+    width: 100% !important;
   }
 }
 

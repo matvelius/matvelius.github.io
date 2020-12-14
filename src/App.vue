@@ -246,7 +246,27 @@
       </v-row>
     </v-parallax>
 
-    <v-alert class="banner text-center"><h2>Recent Projects:</h2></v-alert>
+    <v-card outlined class="my-9 pa-3">
+      <p class="blue-grey--text text--darken-4">
+        <strong>At work I typically:</strong>
+        design new features, improve existing code, capture user stories, plan
+        out and create new UI, write Vue apps, maintain Meteor sites, create
+        templates, fix front-end bugs, help with back-end logic and maintenance,
+        deploy portal updates, and more.
+      </p>
+
+      <p class="mb-0">
+        <strong>Current projects:</strong>
+        a new Vue portal to house an array of functionality and reporting our
+        company offers; an iOS chat app that allows secure communication between
+        doctors and patients; a new variation of a client portal centered around
+        surveys and survey result analysis.
+      </p>
+    </v-card>
+
+    <h2 class="text-center font-weight-medium mb-9 sectionTitle">
+      Recent Side Projects:
+    </h2>
 
     <v-expansion-panels v-model="panel" multiple focusable>
       <!-- PROJECT 1 -->
@@ -1101,6 +1121,7 @@ body,
   max-width: 1200px;
   margin: 0 auto;
   padding: 15px;
+  background: #f9f9f9;
   /* border-radius: 10px !important;
   overflow: hidden; */
 }
@@ -1124,6 +1145,10 @@ body,
   filter: blur(2px);
   /* top: -3382px; */
   /* left: -50%; */
+}
+
+.v-tooltip__content {
+  opacity: 1 !important;
 }
 
 #myName {
@@ -1207,6 +1232,10 @@ button span {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   transition: all 2.8s;
+}
+
+.sectionTitle {
+  color: #55940c;
 }
 
 .contentBlock:not(:first-of-type) {

@@ -268,7 +268,13 @@
       Recent Side Projects:
     </h2>
 
-    <v-expansion-panels v-model="panel" multiple focusable>
+    <v-expansion-panels
+      id="projectExpansionPanelSection"
+      class="mb-9"
+      v-model="panel"
+      multiple
+      focusable
+    >
       <!-- PROJECT 1 -->
       <v-expansion-panel>
         <v-expansion-panel-header>
@@ -979,6 +985,39 @@ def apology(message, code=400):
       </v-expansion-panel>
     </v-expansion-panels>
 
+    <h2 class="text-center font-weight-medium mb-9 sectionTitle">About me:</h2>
+
+    <v-card outlined class="mb-9 pa-3" id="aboutMeCard">
+      <img
+        class="float-sm-right rounded-lg elevation-5 ma-2"
+        :src="require('@/assets/img/Matvey Kostukovsky cropped.jpg')"
+        id="myPhoto"
+      />
+
+      <div class="my-1 mx-2">
+        <p class="mb-3">
+          When it comes to software development, I strive to create things and
+          experiences that are functional, intuitive, modern, and aesthetically
+          pleasing. I enjoy diving deep into the logic of an app, website, or
+          feature, looking for ways to simplify and optimize both the app flow
+          and the underlying code. Years of experience as a professional
+          musician, music teacher, and producer have taught me attention to
+          detail, perseverance, and ability to communicate ideas clearly and
+          precisely.
+        </p>
+
+        <p>
+          Outside of work, I am typically either practicing jazz tunes on
+          clarinet, piano, or this sweet 7-string bass I recently got, producing
+          experimental music, working on side projects, hiking, or rock
+          climbing. I am also a co-founder of
+          <a href="https://www.terrasounds.com" target="_blank"
+            >Terra Sounds School of Music & Arts</a
+          >.
+        </p>
+      </div>
+    </v-card>
+
     <!-- <v-speed-dial
       fixed
       v-model="fab"
@@ -1222,6 +1261,10 @@ button span {
   width: 119px;
 }
 
+.contactButtonIcon {
+  font-size: 20px !important;
+}
+
 .contactButtonText {
   text-decoration: none !important;
 }
@@ -1235,7 +1278,7 @@ button span {
 }
 
 .sectionTitle {
-  color: #55940c;
+  color: #60b102;
 }
 
 .contentBlock:not(:first-of-type) {
@@ -1438,6 +1481,16 @@ pre code,
   -moz-tab-size: 4 !important;
   -o-tab-size: 4 !important;
   tab-size: 4 !important;
+}
+
+#aboutMeCard {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+#myPhoto {
+  max-width: 230px;
+  opacity: 0.95;
 }
 
 a:link {
@@ -1720,6 +1773,10 @@ a:active {
     margin-bottom: 15px;
     min-width: 215px;
   }
+
+  #aboutMeCard {
+    max-width: 70%;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -1758,6 +1815,9 @@ a:active {
     display: block !important;
     margin: 15px auto !important;
   }
+  #aboutMeCard {
+    max-width: 80%;
+  }
 }
 
 @media screen and (max-width: 730px) {
@@ -1782,6 +1842,10 @@ a:active {
   #financeCode3 {
     width: 100%;
   }
+
+  #aboutMeCard {
+    max-width: 90%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1800,6 +1864,14 @@ a:active {
     float: none !important;
     margin: 30px auto !important;
     width: 100% !important;
+  }
+  #aboutMeCard {
+    max-width: 100%;
+    border-radius: 0 !important;
+  }
+  #myPhoto {
+    display: block;
+    margin: 30px auto !important;
   }
 }
 

@@ -39,13 +39,43 @@
                   </v-chip>
                 </template>
                 <div>
-                  <table>
+                  <table class="expertiseList">
                     <tbody>
                       <tr>
                         <td>Swift</td>
+                        <td>XCode</td>
                       </tr>
                       <tr>
-                        <td>XCode</td>
+                        <td>SwiftUI</td>
+                        <td>Combine</td>
+                      </tr>
+                      <tr>
+                        <td>UIKit</td>
+                        <td>Cocoa</td>
+                      </tr>
+                      <tr>
+                        <td>CoreData</td>
+                        <td>AVFoundation</td>
+                      </tr>
+                      <tr>
+                        <td>AudioKit</td>
+                        <td>CryptoKit</td>
+                      </tr>
+                      <tr>
+                        <td>Alamofire</td>
+                        <td>CryptoKit</td>
+                      </tr>
+                      <tr>
+                        <td>TestFlight</td>
+                        <td>HIG</td>
+                      </tr>
+                      <tr>
+                        <td>TableView</td>
+                        <td>CollectionView</td>
+                      </tr>
+                      <tr>
+                        <td>Delegates & Protocols</td>
+                        <td>KVO</td>
                       </tr>
                     </tbody>
                   </table>
@@ -65,13 +95,40 @@
                   </v-chip>
                 </template>
                 <div>
-                  <table>
+                  <table class="expertiseList">
                     <tbody>
                       <tr>
                         <td>Vue</td>
+                        <td>Meteor</td>
                       </tr>
+                      <tr></tr>
                       <tr>
                         <td>Node/Express</td>
+                        <td>JavaScript</td>
+                      </tr>
+                      <tr>
+                        <td>REST APIs</td>
+                        <td>Python</td>
+                      </tr>
+                      <tr>
+                        <td>Django</td>
+                        <td>Flask</td>
+                      </tr>
+                      <tr>
+                        <td>Postman</td>
+                        <td>Heroku</td>
+                      </tr>
+                      <tr>
+                        <td>Docker</td>
+                        <td>MongoDB</td>
+                      </tr>
+                      <tr>
+                        <td>Firebase</td>
+                        <td>SQL Server</td>
+                      </tr>
+                      <tr>
+                        <td>SSMS</td>
+                        <td>Azure Data Studio</td>
                       </tr>
                     </tbody>
                   </table>
@@ -93,12 +150,38 @@
                   </v-chip>
                 </template>
                 <div>
-                  <table>
+                  <table class="expertiseList">
                     <tbody>
                       <tr>
-                        <td>Sketch</td>
+                        <td>HTML</td>
+                        <td>CSS</td>
                       </tr>
                       <tr>
+                        <td>SASS/SCSS/Less</td>
+                        <td>jQuery</td>
+                      </tr>
+                      <tr>
+                        <td>Bootstrap</td>
+                        <td>Tailwind CSS</td>
+                      </tr>
+                      <tr>
+                        <td>Vuetify</td>
+                        <td>PrimeVue</td>
+                      </tr>
+                      <tr>
+                        <td>Datatables</td>
+                        <td>Tabulator</td>
+                      </tr>
+                      <tr>
+                        <td>ChartsJS</td>
+                        <td>ApexCharts</td>
+                      </tr>
+                      <tr>
+                        <td>Fusion Charts</td>
+                        <td>HighCharts</td>
+                      </tr>
+                      <tr>
+                        <td>Sketch</td>
                         <td>Photoshop</td>
                       </tr>
                     </tbody>
@@ -1065,6 +1148,16 @@ export default {
   display: flex;
   align-items: center !important;
   /* margin-top: -50px; */
+}
+
+.expertiseList {
+  line-height: 1;
+  font-size: 12px;
+  padding: -5px -100px;
+}
+
+.expertiseList tbody td {
+  padding: 3px;
 }
 
 .banner {

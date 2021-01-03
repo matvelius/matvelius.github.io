@@ -11,6 +11,6 @@ export default new Vuetify({
       md: 1264,
       lg: 1904,
       xl: 2400
-    },
+    }
   }
 });

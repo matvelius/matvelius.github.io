@@ -1,5 +1,6 @@
 <template>
-  <v-app id="main" v-resize="onResize">
+  <v-app id="main" v-resize="onResize" class="mt-md-5">
+    <!-- HEADER -->
     <v-parallax
       :src="require('@/assets/img/parallax14.jpg')"
       :height="parallaxHeight"
@@ -59,10 +60,10 @@
                       </tr>
                       <tr>
                         <td>AudioKit</td>
-                        <td>CryptoKit</td>
+                        <td>Alamofire</td>
                       </tr>
                       <tr>
-                        <td>Alamofire</td>
+                        <td>Swift Crypto</td>
                         <td>CryptoKit</td>
                       </tr>
                       <tr>
@@ -246,26 +247,34 @@
       </v-row>
     </v-parallax>
 
-    <v-card outlined class="my-9 pa-3">
-      <p class="blue-grey--text text--darken-4">
-        <strong>At work I typically:</strong>
-        design new features, improve existing code, capture user stories, plan
-        out and create new UI, write Vue apps, maintain Meteor sites, create
-        templates, fix front-end bugs, help with back-end logic and maintenance,
-        deploy portal updates, and more.
+    <h2 class="text-center font-weight-medium my-8 sectionTitle">
+      Current Work Projects:
+    </h2>
+
+    <v-card outlined class="mb-8 pa-3">
+      <p class="mb-0">
+        <ul>
+          <li>an updated & super-slick version of our client portal that contains and provides access to a unique array of automated SMS, call, e-mail, and survey functionality &#38; reporting our company offers</li>
+          <li>a versatile and secure doctor-patient web &#38; iOS chat app that gives us an opportunity to tap into a new market</li>
+          <li>a new set of pages, tables, and graphs centered around surveys and survey result analysis to update and expand our survey capabilities</li>
+        </ul>
       </p>
 
-      <p class="mb-0">
-        <strong>Current projects:</strong>
-        a new Vue portal to house an array of functionality and reporting our
-        company offers; an iOS chat app that allows secure communication between
-        doctors and patients; a new variation of a client portal centered around
-        surveys and survey result analysis.
+      <p class="blue-grey--text text--darken-4 my-2">
+        <strong>Tech stack:</strong>
+        Vue.js &#8226; Meteor &#8226; Express &#8226; SQL Server &#8226; Firebase &#8226; MongoDB
       </p>
+
+      <p class="blue-grey--text text--darken-4 my-2">
+        <strong>Frameworks & Libraries:</strong>
+        Vuetify &#8226; PrimeVue &#8226; FusionCharts &#8226; ApexCharts &#8226; Chart.js &#8226; Tabulator &#8226; DataTables
+      </p>
+      
     </v-card>
 
     <h2 class="text-center font-weight-medium mb-9 sectionTitle">
       Recent Side Projects:
+      <p class="caption mb-0">(click to expand/collapse)</p>
     </h2>
 
     <v-expansion-panels
@@ -987,9 +996,9 @@ def apology(message, code=400):
 
     <h2 class="text-center font-weight-medium mb-9 sectionTitle">About me:</h2>
 
-    <v-card outlined class="mb-9 pa-3" id="aboutMeCard">
+    <v-card outlined class="mb-9 pa-4" id="aboutMeCard">
       <img
-        class="float-sm-right rounded-lg elevation-5 ma-2"
+        class="float-sm-right rounded-lg elevation-5 ma-3"
         :src="require('@/assets/img/Matvey Kostukovsky cropped.jpg')"
         id="myPhoto"
       />
@@ -1000,10 +1009,7 @@ def apology(message, code=400):
           experiences that are functional, intuitive, modern, and aesthetically
           pleasing. I enjoy diving deep into the logic of an app, website, or
           feature, looking for ways to simplify and optimize both the app flow
-          and the underlying code. Years of experience as a professional
-          musician, music teacher, and producer have taught me attention to
-          detail, perseverance, and ability to communicate ideas clearly and
-          precisely.
+          and the underlying code.
         </p>
 
         <p>
@@ -1017,37 +1023,6 @@ def apology(message, code=400):
         </p>
       </div>
     </v-card>
-
-    <!-- <v-speed-dial
-      fixed
-      v-model="fab"
-      :top="top"
-      :bottom="bottom"
-      :right="right"
-      :left="left"
-      :direction="direction"
-      :open-on-hover="hover"
-      :transition="transition"
-    >
-      <template v-slot:activator>
-        <v-btn v-model="fab" color="blue darken-2" dark fab x-large>
-          <v-icon v-if="fab"> mdi-close </v-icon>
-          <img
-            :src="require('@/assets/img/Matvey Kostukovsky stack.png')"
-            class="photo"
-          />
-        </v-btn>
-      </template>
-      <v-btn fab dark small color="green">
-        <v-icon>mdi-pencil</v-icon>
-      </v-btn>
-      <v-btn fab dark small color="indigo">
-        <v-icon>mdi-plus</v-icon>
-      </v-btn>
-      <v-btn fab dark small color="red">
-        <v-icon>mdi-delete</v-icon>
-      </v-btn>
-    </v-speed-dial> -->
   </v-app>
 </template>
 
@@ -1157,7 +1132,7 @@ body,
 }
 
 #main {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 15px;
   background: #f9f9f9;

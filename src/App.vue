@@ -27,7 +27,7 @@
                 >:
               </h4> -->
 
-              <v-tooltip :bottom="showTooltipOnTop" :left="!showTooltipOnTop">
+              <v-tooltip :bottom="showTooltipOnBottom" :left="!showTooltipOnBottom" transition="fab-transition">
                 <template v-slot:activator="{ on, attrs }">
                   <v-chip
                     v-bind="attrs"
@@ -39,21 +39,23 @@
                     <span class="white--text">iOS</span>
                   </v-chip>
                 </template>
-                <div>
+                <div id="tooltip1">
 
-                    <h4>Languages:</h4>
-                    <p>Swift, Objective C</p>
-
-                    <h4>Frameworks:</h4>
-                    <p>UIKit, Cocoa, SwiftUI, Combine, CoreData, AVFoundation, AudioKit, Alamofire, CryptoKit</p>
-
-                    <h4>Tools:</h4>
-                    <p class="mb-0">Xcode, Simulator, TestFlight</p>
+                    <div class="tooltipInnerContent">
+                      <h4>Languages:</h4>
+                      <p>Swift, Objective C</p>
+  
+                      <h4>Frameworks:</h4>
+                      <p>UIKit, Cocoa, SwiftUI, Combine, CoreData, AVFoundation, AudioKit, Alamofire, CryptoKit</p>
+  
+                      <h4>Tools:</h4>
+                      <p class="mb-0">Xcode, Simulator, TestFlight</p>
+                    </div>
 
                 </div>
               </v-tooltip>
 
-              <v-tooltip :bottom="showTooltipOnTop" :left="!showTooltipOnTop">
+              <v-tooltip :bottom="showTooltipOnBottom" :left="!showTooltipOnBottom" transition="scale-transition">
                 <template v-slot:activator="{ on, attrs }">
                   <v-chip
                     v-bind="attrs"
@@ -65,21 +67,23 @@
                     <span class="white--text">Web</span>
                   </v-chip>
                 </template>
-                <div>
+                <div id="tooltip2">
 
-                    <h4>Languages:</h4>
-                    <p>JavaScript, Python, HTML, CSS/SASS/SCSS</p>
-
-                    <h4>Frameworks:</h4>
-                    <p>Vue, Meteor, Django, Vuetify, PrimeVue, Bootstrap</p>
-
-                    <h4>Back-End & Tools:</h4>
-                    <p class="mb-0">Node & Express, Git, Docker, Postman</p>
+                    <div class="tooltipInnerContent">
+                      <h4>Languages:</h4>
+                      <p>JavaScript, Python, HTML, CSS/SASS/SCSS</p>
+  
+                      <h4>Frameworks:</h4>
+                      <p>Vue, Meteor, Django, Vuetify, PrimeVue, Bootstrap</p>
+  
+                      <h4>Back-End & Tools:</h4>
+                      <p class="mb-0">Node & Express, Git, Docker, Postman</p>
+                    </div>
 
                 </div>
               </v-tooltip>
 
-              <v-tooltip :bottom="showTooltipOnTop" :left="!showTooltipOnTop">
+              <v-tooltip :bottom="showTooltipOnBottom" :left="!showTooltipOnBottom" transition="fade-transition">
                 <template v-slot:activator="{ on, attrs }">
                   <v-chip
                     v-bind="attrs"
@@ -93,13 +97,15 @@
                     <span class="white--text">Data</span>
                   </v-chip>
                 </template>
-                <div>
+                <div id="tooltip3">
 
-                    <h4>Database:</h4>
-                    <p>SQL Server, MongoDB, Firebase, PostgreSQL, SQLite</p>
-
-                    <h4>Tools:</h4>
-                    <p class="mb-0">SSMS, Azure Data Studio, Studio3T</p>
+                    <div class="tooltipInnerContent">
+                      <h4>Database:</h4>
+                      <p>SQL Server, MongoDB, Firebase, PostgreSQL, SQLite</p>
+  
+                      <h4>Tools:</h4>
+                      <p class="mb-0">SSMS, Azure Data Studio, Studio3T</p>
+                    </div>
 
                 </div>
               </v-tooltip>
@@ -154,7 +160,7 @@
                   </v-btn>
                 </a>
               </template>
-              <div>email@matveycodes.com</div>
+              <div class="px-1">email@matveycodes.com</div>
             </v-tooltip>
           </div>
         </v-col>
@@ -978,7 +984,7 @@ export default {
         x: 0,
         y: 0,
       },
-      showTooltipOnTop: true,
+      showTooltipOnBottom: true,
     };
   },
 
@@ -1025,10 +1031,10 @@ export default {
     onResize() {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight };
       if (window.innerWidth <= 558) {
-        this.showTooltipOnTop = false;
+        this.showTooltipOnBottom = false;
         this.parallaxHeight = 290;
       } else {
-        this.showTooltipOnTop = true;
+        this.showTooltipOnBottom = true;
         this.parallaxHeight = 260;
       }
     },
@@ -1386,13 +1392,12 @@ pre code,
 }
 
 .v-tooltip__content {
-  /* background: #fff !important;  */
-  background: #fafff6 !important;
+  background: #fff !important;
   color: rgb(97, 97, 97) !important;
   font-size: 13px !important;
   text-align: center;
   opacity: 1 !important;
-  padding: 0 3px !important;
+  padding: 0 !important;
   margin: 0 !important;
   max-width: 210px;
   -webkit-box-shadow: 4px 0px 18px 3px rgba(0, 0, 0, 0.09);
@@ -1400,13 +1405,31 @@ pre code,
   box-shadow: 4px 0px 18px 3px rgba(0, 0, 0, 0.09);
 }
 
-.v-tooltip__content:nth-of-type(3) {
+/* .v-tooltip__content:nth-of-type(1) {
+  background: #fafff6 !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+} */
+
+#tooltip1 {
+  background: #fafff6 !important;
+}
+
+#tooltip2 {
   background: #fff6e7 !important;
 }
 
-.v-tooltip__content:nth-of-type(4) {
+#tooltip3 {
   background: #effaff !important;
 }
+
+.tooltipInnerContent {
+  padding: 5px !important;
+}
+
+/* .v-tooltip__content {
+  transition-duration: 50ms !important;
+} */
 
 a:link {
   text-decoration: none;

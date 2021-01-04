@@ -1390,6 +1390,7 @@ pre code,
   background: #fafff6 !important;
   color: rgb(97, 97, 97) !important;
   font-size: 13px !important;
+  text-align: center;
   opacity: 1 !important;
   padding: 0 3px !important;
   margin: 0 !important;

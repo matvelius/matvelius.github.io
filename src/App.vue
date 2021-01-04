@@ -2,7 +2,7 @@
   <v-app id="main" v-resize="onResize" class="mt-md-5">
     <!-- HEADER -->
     <v-parallax
-      :src="require('@/assets/img/parallax14.jpg')"
+      :src="require('@/assets/img/parallax19.jpg')"
       :height="parallaxHeight"
       fade-img-on-scroll
       scroll-target="#firstProject"
@@ -17,7 +17,7 @@
           >
             <div class="topContainer">
               <h1 class="font-weight-medium" id="myName">Matvey Kostukovsky</h1>
-              <h3 class="font-weight-regular">Software Developer</h3>
+              <h3 class="font-weight-regular" id="myTitle">Software Developer</h3>
             </div>
 
             <div class="bottomContainer">
@@ -27,7 +27,7 @@
                 >:
               </h4> -->
 
-              <v-tooltip :top="showTooltipOnTop" :left="!showTooltipOnTop">
+              <v-tooltip :bottom="showTooltipOnTop" :left="!showTooltipOnTop">
                 <template v-slot:activator="{ on, attrs }">
                   <v-chip
                     v-bind="attrs"
@@ -40,50 +40,20 @@
                   </v-chip>
                 </template>
                 <div>
-                  <table class="expertiseList">
-                    <tbody>
-                      <tr>
-                        <td>Swift</td>
-                        <td>XCode</td>
-                      </tr>
-                      <tr>
-                        <td>SwiftUI</td>
-                        <td>Combine</td>
-                      </tr>
-                      <tr>
-                        <td>UIKit</td>
-                        <td>Cocoa</td>
-                      </tr>
-                      <tr>
-                        <td>CoreData</td>
-                        <td>AVFoundation</td>
-                      </tr>
-                      <tr>
-                        <td>AudioKit</td>
-                        <td>Alamofire</td>
-                      </tr>
-                      <tr>
-                        <td>Swift Crypto</td>
-                        <td>CryptoKit</td>
-                      </tr>
-                      <tr>
-                        <td>TestFlight</td>
-                        <td>HIG</td>
-                      </tr>
-                      <tr>
-                        <td>TableView</td>
-                        <td>CollectionView</td>
-                      </tr>
-                      <tr>
-                        <td>Delegates & Protocols</td>
-                        <td>KVO</td>
-                      </tr>
-                    </tbody>
-                  </table>
+
+                    <h4>Languages:</h4>
+                    <p>Swift, Objective C</p>
+
+                    <h4>Frameworks:</h4>
+                    <p>UIKit, Cocoa, SwiftUI, Combine, CoreData, AVFoundation, AudioKit, Alamofire, CryptoKit</p>
+
+                    <h4>Tools:</h4>
+                    <p class="mb-0">Xcode, Simulator, TestFlight</p>
+
                 </div>
               </v-tooltip>
 
-              <v-tooltip :top="showTooltipOnTop" :left="!showTooltipOnTop">
+              <v-tooltip :bottom="showTooltipOnTop" :left="!showTooltipOnTop">
                 <template v-slot:activator="{ on, attrs }">
                   <v-chip
                     v-bind="attrs"
@@ -96,47 +66,20 @@
                   </v-chip>
                 </template>
                 <div>
-                  <table class="expertiseList">
-                    <tbody>
-                      <tr>
-                        <td>Vue</td>
-                        <td>Meteor</td>
-                      </tr>
-                      <tr></tr>
-                      <tr>
-                        <td>Node/Express</td>
-                        <td>JavaScript</td>
-                      </tr>
-                      <tr>
-                        <td>REST APIs</td>
-                        <td>Python</td>
-                      </tr>
-                      <tr>
-                        <td>Django</td>
-                        <td>Flask</td>
-                      </tr>
-                      <tr>
-                        <td>Postman</td>
-                        <td>Heroku</td>
-                      </tr>
-                      <tr>
-                        <td>Docker</td>
-                        <td>MongoDB</td>
-                      </tr>
-                      <tr>
-                        <td>Firebase</td>
-                        <td>SQL Server</td>
-                      </tr>
-                      <tr>
-                        <td>SSMS</td>
-                        <td>Azure Data Studio</td>
-                      </tr>
-                    </tbody>
-                  </table>
+
+                    <h4>Languages:</h4>
+                    <p>JavaScript, Python, HTML, CSS/SASS/SCSS</p>
+
+                    <h4>Frameworks:</h4>
+                    <p>Vue, Meteor, Django, Vuetify, PrimeVue, Bootstrap</p>
+
+                    <h4>Back-End & Tools:</h4>
+                    <p class="mb-0">Node & Express, Git, Docker, Postman</p>
+
                 </div>
               </v-tooltip>
 
-              <v-tooltip :top="showTooltipOnTop" :left="!showTooltipOnTop">
+              <v-tooltip :bottom="showTooltipOnTop" :left="!showTooltipOnTop">
                 <template v-slot:activator="{ on, attrs }">
                   <v-chip
                     v-bind="attrs"
@@ -145,48 +88,19 @@
                     color="light-blue accent-2"
                   >
                     <v-icon left class="white--text">
-                      mdi-image-filter-black-white
+                      mdi-database-check
                     </v-icon>
-                    <span class="white--text">UI/UX</span>
+                    <span class="white--text">Data</span>
                   </v-chip>
                 </template>
                 <div>
-                  <table class="expertiseList">
-                    <tbody>
-                      <tr>
-                        <td>HTML</td>
-                        <td>CSS</td>
-                      </tr>
-                      <tr>
-                        <td>SASS/SCSS/Less</td>
-                        <td>jQuery</td>
-                      </tr>
-                      <tr>
-                        <td>Bootstrap</td>
-                        <td>Tailwind CSS</td>
-                      </tr>
-                      <tr>
-                        <td>Vuetify</td>
-                        <td>PrimeVue</td>
-                      </tr>
-                      <tr>
-                        <td>Datatables</td>
-                        <td>Tabulator</td>
-                      </tr>
-                      <tr>
-                        <td>ChartsJS</td>
-                        <td>ApexCharts</td>
-                      </tr>
-                      <tr>
-                        <td>Fusion Charts</td>
-                        <td>HighCharts</td>
-                      </tr>
-                      <tr>
-                        <td>Sketch</td>
-                        <td>Photoshop</td>
-                      </tr>
-                    </tbody>
-                  </table>
+
+                    <h4>Database:</h4>
+                    <p>SQL Server, MongoDB, Firebase, PostgreSQL, SQLite</p>
+
+                    <h4>Tools:</h4>
+                    <p class="mb-0">SSMS, Azure Data Studio, Studio3T</p>
+
                 </div>
               </v-tooltip>
             </div>
@@ -251,7 +165,7 @@
       Current Work Projects:
     </h2>
 
-    <v-card outlined class="mb-8 pa-3">
+    <v-card outlined class="mb-8 pa-4">
       <p class="mb-0">
         <ul>
           <li>an updated & super-slick version of our client portal that contains and provides access to a unique array of automated SMS, call, e-mail, and survey functionality &#38; reporting our company offers</li>
@@ -260,14 +174,14 @@
         </ul>
       </p>
 
-      <p class="blue-grey--text text--darken-4 my-2">
+      <p class="blue-grey--text text--darken-4 my-2 ml-1">
         <strong>Tech stack:</strong>
         Vue.js &#8226; Meteor &#8226; Express &#8226; SQL Server &#8226; Firebase &#8226; MongoDB
       </p>
 
-      <p class="blue-grey--text text--darken-4 my-2">
+      <p class="blue-grey--text text--darken-4 my-2 ml-1">
         <strong>Frameworks & Libraries:</strong>
-        Vuetify &#8226; PrimeVue &#8226; FusionCharts &#8226; ApexCharts &#8226; Chart.js &#8226; Tabulator &#8226; DataTables
+        Vuetify &#8226; PrimeVue &#8226; Bootstrap &#8226; FusionCharts &#8226; ApexCharts &#8226; Chart.js &#8226; Tabulator &#8226; DataTables
       </p>
       
     </v-card>
@@ -306,6 +220,7 @@
                 muted="muted"
                 poster="https://res.cloudinary.com/solbe/video/upload/v1607321303/matveycodes.com/solbe-web_jg8c0o.jpg"
                 class="block"
+                playsinline
               >
                 <source
                   type="video/mp4"
@@ -387,6 +302,7 @@
                   muted="muted"
                   poster="https://res.cloudinary.com/solbe/video/upload/v1607662549/matveycodes.com/piano_app_rn34bq.jpg"
                   class="block pianoAppVideo"
+                  playsinline
                 >
                   <source
                     type="video/mp4"
@@ -1149,24 +1065,32 @@ body,
   justify-content: space-between !important; */
 }
 
+.v-parallax {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 .v-parallax__image-container {
   background-color: rgba(255, 181, 83, 0.12);
 }
 
 .v-parallax__image {
-  /* max-width: 20% !important; */
-  opacity: 0.17 !important;
-  filter: blur(2px);
+  /* max-width: 5% !important; */
+  opacity: 0.19 !important;
+  filter: blur(1px);
   /* top: -3382px; */
   /* left: -50%; */
-}
-
-.v-tooltip__content {
-  opacity: 1 !important;
+  /* max-width: 100%;
+  max-height: 100%;*/
+  /* object-fit: cover; */
 }
 
 #myName {
-  color: #000;
+  color: #00345f;
+}
+
+#myTitle {
+  color: #005296;
 }
 
 .leftContainer {
@@ -1204,16 +1128,6 @@ body,
   /* margin-top: -50px; */
 }
 
-.expertiseList {
-  line-height: 1;
-  font-size: 12px;
-  padding: -5px -100px;
-}
-
-.expertiseList tbody td {
-  padding: 3px;
-}
-
 .banner {
   height: 125px;
   display: flex !important;
@@ -1230,6 +1144,8 @@ button span {
   display: -webkit-box;
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
+
+  color: #00345f;
 }
 
 .contactButton {
@@ -1238,6 +1154,8 @@ button span {
 
 .contactButtonIcon {
   font-size: 20px !important;
+
+  color: #00345f !important;
 }
 
 .contactButtonText {
@@ -1393,7 +1311,6 @@ button span {
   min-width: 272px;
   max-width: 700px;
   height: auto;
-  background: MediumPurple;
   color: #111;
   text-align: center;
   line-height: 0;
@@ -1459,13 +1376,35 @@ pre code,
 }
 
 #aboutMeCard {
-  max-width: 60%;
+  max-width: 63%;
   margin: 0 auto;
 }
 
 #myPhoto {
   max-width: 230px;
   opacity: 0.95;
+}
+
+.v-tooltip__content {
+  /* background: #fff !important;  */
+  background: #fafff6 !important;
+  color: rgb(97, 97, 97) !important;
+  font-size: 13px !important;
+  opacity: 1 !important;
+  padding: 0 3px !important;
+  margin: 0 !important;
+  max-width: 210px;
+  -webkit-box-shadow: 4px 0px 18px 3px rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: 4px 0px 18px 3px rgba(0, 0, 0, 0.09);
+  box-shadow: 4px 0px 18px 3px rgba(0, 0, 0, 0.09);
+}
+
+.v-tooltip__content:nth-of-type(3) {
+  background: #fff6e7 !important;
+}
+
+.v-tooltip__content:nth-of-type(4) {
+  background: #effaff !important;
 }
 
 a:link {

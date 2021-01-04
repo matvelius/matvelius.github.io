@@ -182,7 +182,7 @@
 
       <p class="blue-grey--text text--darken-4 my-2 ml-1">
         <strong>Tech stack:</strong>
-        Vue.js &#8226; Meteor &#8226; Express &#8226; SQL Server &#8226; Firebase &#8226; MongoDB
+        Vue.js &#8226; Meteor &#8226; Express &#8226; SQL Server &#8226; Firebase &#8226; MongoDB &#8226; EC2 &#8226; S3
       </p>
 
       <p class="blue-grey--text text--darken-4 my-2 ml-1">

@@ -171,7 +171,7 @@
       Current Work Projects:
     </h2>
 
-    <v-card outlined class="mb-8 pa-4">
+    <v-card class="mb-8 pa-4">
       <p class="mb-0">
         <ul>
           <li>an updated & super-slick version of our client portal that contains and provides access to a unique array of automated SMS, call, e-mail, and survey functionality &#38; reporting our company offers</li>
@@ -931,7 +931,7 @@ def apology(message, code=400):
           experiences that are functional, intuitive, modern, and aesthetically
           pleasing. I enjoy diving deep into the logic of an app, website, or
           feature, looking for ways to simplify and optimize both the app flow
-          and the underlying code.
+          and the underlying code and to continuously improve UI & UX based on user feedback.
         </p>
 
         <p>
@@ -1096,7 +1096,7 @@ body,
 }
 
 #myTitle {
-  color: #005296;
+  color: #00437a;
 }
 
 .leftContainer {
@@ -1382,7 +1382,7 @@ pre code,
 }
 
 #aboutMeCard {
-  max-width: 63%;
+  max-width: 61%;
   margin: 0 auto;
 }
 

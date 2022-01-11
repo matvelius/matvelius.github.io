@@ -191,9 +191,9 @@
         <h3 class="mt-5 sectionTitleOrange">Web Development:</h3>
         <p class="mb-0">
           <ul>
-            <li>an updated & super-slick version of our client portal that contains and provides access to a unique array of automated SMS, call, e-mail, and survey functionality &#38; reporting our company offers</li>
-            <li>a versatile and secure doctor-patient web &#38; iOS chat app that gives us an opportunity to tap into a new market</li>
-            <li>a new set of pages, tables, and graphs centered around surveys and survey result analysis to update and expand our survey capabilities</li>
+            <li>a client portal that provides access to a customizable array of automated SMS, call, e-mail, and survey functionality</li>
+            <li>a survey-creator module which allows admin users to quickly configure surveys with a variety of question types</li>
+            <li>a secure doctor-patient Vue & Express chat app</li>
           </ul>
         </p>
         <p class="blue-grey--text text--darken-4 my-2 ml-1">
@@ -201,7 +201,7 @@
           Vue.js &#8226; Meteor &#8226; Express &#8226; SQL Server &#8226; Firebase &#8226; MongoDB &#8226; EC2 &#8226; S3
         </p>
         <p class="blue-grey--text text--darken-4 my-2 ml-1">
-          <strong>Frameworks & Libraries:</strong>
+          <strong>Frameworks & libraries:</strong>
           Vuetify &#8226; PrimeVue &#8226; Bootstrap &#8226; FusionCharts &#8226; ApexCharts &#8226; Chart.js &#8226; Tabulator &#8226; DataTables
         </p>
       

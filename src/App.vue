@@ -118,7 +118,7 @@
             class="rightContainer d-flex justify-space-around align-center px-sm-6 mx-n1"
           >
             <a
-              href="https://www.linkedin.com/in/matvey-kostukovsky/"
+              href="https://www.linkedin.com/in/mkostukovsky/"
               target="_blank"
             >
               <v-btn
@@ -169,11 +169,26 @@
       </v-row>
     </v-parallax>
 
-    <div v-if="showCurrentWorkProjects">
-      <h2 class="text-center font-weight-medium my-8 sectionTitle">
-        Current Work Projects:
+    <div v-if="showRecentWorkProjects">
+      <h2 class="text-center font-weight-medium my-8 sectionTitleGreen">
+        Recent Work Projects:
       </h2>
-      <v-card class="mb-8 pa-4">
+      <v-card :flat="$vuetify.breakpoint.smAndDown" class="mb-8 pa-4">
+        <h3 class="sectionTitleGreen">iOS:</h3>
+        <p class="mb-0">
+          I am currently working on the client-facing Northwestern Mutual iOS app that allows users to monitor their investment accounts and net worth, make premium payments, view transactions, chat with their financial 
+          representatives, plan their reitrement, track financial goals, and much more. During my time at the company so far our team's efforts have resulted in the following:
+          <ul class="mt-3">
+            <li>the number of monthly unique users has grown from 135k to 184k (+36%)</li>
+            <li>the number of app downloads has increased from 520k to 623k (+20%)</li>
+            <li>our app's rating has increased from 3.9 to 4.4</li>
+          </ul>
+        </p>
+        <p class="blue-grey--text text--darken-4 my-2 ml-1">
+          <strong>Frameworks, libraries, and other tech we use:</strong>
+          SwiftUI &#8226; Combine &#8226; UIKit &#8226; RxSwift &#8226; Heap &#8226; Firebase &#8226; SonarQube
+        </p>
+        <h3 class="mt-5 sectionTitleOrange">Web Development:</h3>
         <p class="mb-0">
           <ul>
             <li>an updated & super-slick version of our client portal that contains and provides access to a unique array of automated SMS, call, e-mail, and survey functionality &#38; reporting our company offers</li>
@@ -194,7 +209,7 @@
     </div>
 
     <div v-if="showRecentSideProjects">
-      <h2 class="text-center font-weight-medium mb-9 sectionTitle">
+      <h2 class="text-center font-weight-medium mb-9 sectionTitleGreen">
         Recent Side Projects:
         <p class="caption mb-0">(click to expand/collapse)</p>
       </h2>
@@ -204,6 +219,7 @@
         v-model="panel"
         multiple
         focusable
+        :flat="$vuetify.breakpoint.smAndDown"
       >
         <!-- PROJECT 1 -->
         <v-expansion-panel>
@@ -845,8 +861,8 @@
     </div>
 
     <div v-if="showAboutMe">
-      <h2 class="text-center font-weight-medium mb-9 sectionTitle">About me:</h2>
-      <v-card outlined class="mb-9 pa-4" id="aboutMeCard">
+      <h2 class="text-center font-weight-medium mb-9 sectionTitleGreen">About me:</h2>
+      <v-card :outlined="$vuetify.breakpoint.mdAndUp" class="mb-9 pa-4" id="aboutMeCard" :flat="$vuetify.breakpoint.smAndDown">
         <img
           class="float-sm-right rounded-lg elevation-5 ma-3"
           :src="require('@/assets/img/Matvey Kostukovsky stack.png')"
@@ -859,11 +875,14 @@
             pleasing. I enjoy diving deep into the logic of an app, website, or
             feature, looking for ways to simplify and optimize both the app flow
             and the underlying code and to continuously improve UI & UX based on user feedback.
+            When it comes to working in a team environment my goal is to write code that is readable,
+            well-documented, and tested, making sure that established architecture and patterns
+            are followed.
           </p>
           <p>
             Outside of work, I am typically either practicing jazz tunes on
             clarinet, piano, or this sweet 7-string bass I recently got, producing
-            experimental music, working on side projects, hiking, or rock
+            experimental electronic music, working on side projects, hiking, or rock
             climbing. I am also a co-founder of
             <a href="https://www.terrasounds.com" target="_blank"
               >Terra Sounds School of Music & Arts</a
@@ -912,9 +931,9 @@ export default {
         y: 0,
       },
       showTooltipOnBottom: true,
-      showCurrentWorkProjects: false,
-      showRecentSideProjects: false,
-      showAboutMe: false,
+      showRecentWorkProjects: true,
+      showRecentSideProjects: true,
+      showAboutMe: true,
     };
   },
 
@@ -1110,8 +1129,12 @@ button span {
   transition: all 2.8s;
 }
 
-.sectionTitle {
+.sectionTitleGreen {
   color: #60b102;
+}
+
+.sectionTitleOrange {
+  color: #ffa000;
 }
 
 .contentBlock:not(:first-of-type) {

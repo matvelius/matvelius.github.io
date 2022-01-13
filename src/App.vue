@@ -44,14 +44,14 @@
                 <div id="tooltip1">
 
                     <div class="tooltipInnerContent">
-                      <h4>Languages:</h4>
-                      <p>Swift, Objective C</p>
+                      <h4>Language:</h4>
+                      <p>Swift</p>
   
                       <h4>Frameworks:</h4>
-                      <p>UIKit, Cocoa, SwiftUI, Combine, CoreData, AVFoundation, AudioKit, Alamofire, CryptoKit</p>
+                      <p>SwiftUI, Combine, UIKit, RxSwift, CoreData, AVFoundation, AudioKit, Alamofire, CryptoKit</p>
   
                       <h4>Tools:</h4>
-                      <p class="mb-0">Xcode, Simulator, TestFlight</p>
+                      <p class="mb-0">Xcode, DocC, Firebase, Heap, TestFlight</p>
                     </div>
 
                 </div>
@@ -186,7 +186,7 @@
         </p>
         <p class="blue-grey--text text--darken-4 my-2 ml-1">
           <strong>Frameworks, libraries, and other tech we use:</strong>
-          SwiftUI &#8226; Combine &#8226; UIKit &#8226; RxSwift &#8226; Heap &#8226; Firebase &#8226; SonarQube
+          SwiftUI &#8226; Combine &#8226; UIKit &#8226; RxSwift &#8226; Heap &#8226; Firebase &#8226; DocC &#8226; SonarQube
         </p>
         <h3 class="mt-5 sectionTitleOrange">Web Development:</h3>
         <p class="mb-0">
@@ -276,9 +276,9 @@
               </p>
               <p>
                 The iOS app uses Apple's SwiftUI framework and connects to an
-                Express API hosted on Heroku for login and account creation,
-                registering thoughts, and to obtain the latest group, member, and
-                stats data. The Express app utilizes the Tedious library in order
+                Express API for login and account creation, registering thoughts, 
+                and to obtain the latest group, member, and stats data. 
+                The Express app utilizes the Tedious library in order
                 to query the SQL Server database. Most of the app functionality is
                 in the form of stored procedures which the Express app triggers.
                 The iOS app takes care of basic front-end validation of user
@@ -294,7 +294,8 @@
                 through its paces via Apple's Test Flight. We are currently
                 ironing out various bugs and creating additional statistical
                 queries and views in order to provide the user with more insight
-                and make the app more interesting and fun to use.
+                and make the app more interesting and fun to use, with the goal of
+                releasing to the AppStore in the next couple of months.
               </p>
             </div>
           </v-expansion-panel-content>

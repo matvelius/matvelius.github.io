@@ -19,7 +19,7 @@
           >
             <div class="topContainer">
               <h1 class="font-weight-medium" id="myName">Matvey Kostukovsky</h1>
-              <h3 class="font-weight-regular" id="myTitle">Software Developer</h3>
+              <h3 class="font-weight-regular" id="myTitle">iOS Engineer @ <a href="https://www.linkedin.com/in/mkostukovsky/">LinkedIn</a></h3>
             </div>
 
             <div class="bottomContainer">
@@ -44,8 +44,8 @@
                 <div id="tooltip1">
 
                     <div class="tooltipInnerContent">
-                      <h4>Language:</h4>
-                      <p>Swift</p>
+                      <h4>Languages:</h4>
+                      <p>Swift, Objective-C</p>
   
                       <h4>Frameworks:</h4>
                       <p>SwiftUI, Combine, UIKit, RxSwift, CoreData, AVFoundation, AudioKit, Alamofire, CryptoKit</p>
@@ -115,6 +115,7 @@
           </div>
 
           <div
+            v-if="showContactInfo"
             class="rightContainer d-flex justify-space-around align-center px-sm-6 mx-n1"
           >
             <a
@@ -181,7 +182,7 @@
           <ul class="mt-3">
             <li>the number of monthly unique users has grown from 135k to 184k (+36%)</li>
             <li>the number of app downloads has increased from 520k to 623k (+20%)</li>
-            <li>our app's rating has increased from 3.9 to 4.4</li>
+            <li>our app's rating has increased from 3.9 to 4.5</li>
           </ul>
         </p>
         <p class="blue-grey--text text--darken-4 my-2 ml-1">
@@ -932,9 +933,10 @@ export default {
         y: 0,
       },
       showTooltipOnBottom: true,
-      showRecentWorkProjects: true,
-      showRecentSideProjects: true,
-      showAboutMe: true,
+      showContactInfo: false,
+      showRecentWorkProjects: false,
+      showRecentSideProjects: false,
+      showAboutMe: false,
     };
   },
 

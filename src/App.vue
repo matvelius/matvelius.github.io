@@ -23,12 +23,7 @@
             </div>
 
             <div class="bottomContainer">
-              <!-- <h4>
-                <span class="font-weight-regular text-decoration-underline">
-                  Expertise</span
-                >:
-              </h4> -->
-
+            
               <v-tooltip :bottom="showTooltipOnBottom" :left="!showTooltipOnBottom" transition="fab-transition">
                 <template v-slot:activator="{ on, attrs }">
                   <v-chip

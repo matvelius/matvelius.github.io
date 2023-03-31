@@ -44,8 +44,8 @@
                 <div id="tooltip1">
 
                     <div class="tooltipInnerContent">
-                      <h4>Language:</h4>
-                      <p>Swift</p>
+                      <h4>Languages:</h4>
+                      <p>Swift, Objective C</p>
   
                       <h4>Frameworks:</h4>
                       <p>SwiftUI, Combine, UIKit, RxSwift, CoreData, AVFoundation, AudioKit, Alamofire, CryptoKit</p>
@@ -105,8 +105,8 @@
                       <h4>Database:</h4>
                       <p>SQL Server, MongoDB, Firebase, PostgreSQL, SQLite</p>
   
-                      <h4>Tools:</h4>
-                      <p class="mb-0">SSMS, Azure Data Studio, Studio3T</p>
+                      <h4>Tools & Tech:</h4>
+                      <p class="mb-0">SSMS, Azure Data Studio, Studio3T, GraphQL</p>
                     </div>
 
                 </div>
@@ -208,7 +208,7 @@
       </v-card>
     </div>
 
-    <div v-if="showRecentSideProjects">
+    <div v-if="showRecentSideProjects" class="mt-7">
       <h2 class="text-center font-weight-medium mb-9 sectionTitleGreen">
         Recent Side Projects:
         <p class="caption mb-0">(click to expand/collapse)</p>
@@ -932,7 +932,8 @@ export default {
         y: 0,
       },
       showTooltipOnBottom: true,
-      showRecentWorkProjects: true,
+      showContactInfo: true,
+      showRecentWorkProjects: false,
       showRecentSideProjects: true,
       showAboutMe: true,
     };

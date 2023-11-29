@@ -19,7 +19,7 @@
           >
             <div class="topContainer">
               <h1 class="font-weight-medium" id="myName">Matvey Kostukovsky</h1>
-              <h3 class="font-weight-regular" id="myTitle">Software Developer</h3>
+              <h3 class="font-weight-regular" id="myTitle">iOS Engineer @ Sonos</h3>
             </div>
 
             <div class="bottomContainer">
@@ -132,7 +132,7 @@
               </v-btn>
             </a>
 
-            <a href="https://github.com/matvelius" target="_blank">
+            <!-- <a href="https://github.com/matvelius" target="_blank">
               <v-btn
                 :small="$vuetify.breakpoint.smAndUp"
                 :x-small="$vuetify.breakpoint.smAndDown"
@@ -142,7 +142,7 @@
                 <v-icon left class="contactButtonIcon"> mdi-github </v-icon
                 ><span class="contactButtonText">Github</span>
               </v-btn>
-            </a>
+            </a> -->
 
             <v-tooltip top>
               <template v-slot:activator="{ on, attrs }">
@@ -934,8 +934,8 @@ export default {
       showTooltipOnBottom: true,
       showContactInfo: true,
       showRecentWorkProjects: false,
-      showRecentSideProjects: true,
-      showAboutMe: true,
+      showRecentSideProjects: false,
+      showAboutMe: false,
     };
   },
 

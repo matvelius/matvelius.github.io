@@ -19,7 +19,7 @@
           >
             <div class="topContainer">
               <h1 class="font-weight-medium" id="myName">Matvey Kostukovsky</h1>
-              <h3 class="font-weight-regular" id="myTitle">iOS Engineer @ Sonos</h3>
+              <h3 class="font-weight-regular" id="myTitle">Senior iOS Engineer</h3>
             </div>
 
             <div class="bottomContainer">
@@ -210,7 +210,7 @@
 
     <div v-if="showRecentSideProjects" class="mt-7">
       <h2 class="text-center font-weight-medium mb-9 sectionTitleGreen">
-        Recent Side Projects:
+        Various Side Projects:
         <p class="caption mb-0">(click to expand/collapse)</p>
       </h2>
       <v-expansion-panels
@@ -300,7 +300,70 @@
             </div>
           </v-expansion-panel-content>
         </v-expansion-panel>
+
         <!-- PROJECT 2 -->
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            <span>
+              <strong>Platinum Couch Productions: </strong>
+              Vue.js (web), SwiftUI & Combine (iOS - wip), Node/Express & SQL Server (backend)
+            </span>
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <div
+              class="verticalVideoOuterContainer verticalVideoWideOuterContainer my-5 elevation-5"
+              id="firstProject"
+            >
+              <div class="verticalVideoContainer">
+                <video
+                  height="650"
+                  autoplay
+                  loop
+                  muted="muted"
+                  poster="https://res.cloudinary.com/solbe/video/upload/v1723679473/Platinum_Couch_Productions_website_demo_sfo0as.jpg"
+                  class="block"
+                  playsinline
+                >
+                  <source
+                    type="video/mp4"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1723679473/Platinum_Couch_Productions_website_demo_sfo0as.mp4"
+                  />
+                  <source
+                    type="video/webm"
+                    src="https://res.cloudinary.com/solbe/video/upload/v1723679473/Platinum_Couch_Productions_website_demo_sfo0as.webm"
+                  />
+                  Your browser does not support HTML5 video tag.
+                  <a
+                    href="https://res.cloudinary.com/solbe/video/upload/v1723679473/Platinum_Couch_Productions_website_demo_sfo0as.gif"
+                    >Click here to view original GIF</a
+                  >
+                </video>
+              </div>
+            </div>
+            <div class="textContainer solbeTextContainer solbeNarrowTextContainer my-4">
+              <p>
+                Platinum Couch Productions is a music sharing platform and audio player that allows the user to create custom playlists
+                for specific friends, occasions, or projects. The iOS app is currently in development, however the website is already functional
+                and allows for compressed (mp3) and high-quality (wav) formats, different ways of sorting the music (including organizing the tracks
+                based on the year they were recorded), an easy search function, as well as night mode more appropriate for evening time.
+              </p>
+              <p>
+                When looking for a simple way to share my band's live recordings, I noticed that there is no single service that would allow me to easily
+                create playlists containing only the tracks I would want to share with a specific person or group of friends. For instance, knowing that my mom would likely
+                prefer to hear more of my clarinet and piano playing and generally more relaxed music, while some of my friends are more likely
+                to play more intense or humourous and experimental tracks, I really wanted to have a way to create these playlists quickly and from a single place.
+              </p>
+              <p>
+                Additionally, I was interested in having the ability to track the number of listens for specific tracks (implemented via simple POST requests processed on 
+                the Express.js server and recorded in a SQL database) in order to better understand my friends' musical tastes and gather data to see which of our recordings
+                are most popular. The Vue framework, along with the Vuetify library, provided an easy way to build a modern-looking front end containing a list of tracks
+                and an audio player with familiar Spotify-like features (including shuffle, repeat, skip, etc).
+              </p>
+            </div>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+
+        <!-- PROJECT 3 -->
         <v-expansion-panel>
           <v-expansion-panel-header>
             <span>
@@ -412,7 +475,8 @@
             </div>
           </v-expansion-panel-content>
         </v-expansion-panel>
-        <!-- PROJECT 3 -->
+
+        <!-- PROJECT 4 -->
         <v-expansion-panel>
           <v-expansion-panel-header>
             <span>
@@ -573,7 +637,8 @@
             </div>
           </v-expansion-panel-content>
         </v-expansion-panel>
-        <!-- PROJECT 4 -->
+
+        <!-- PROJECT 5 -->
         <v-expansion-panel>
           <v-expansion-panel-header>
             <span>
@@ -709,7 +774,8 @@
             </div>
           </v-expansion-panel-content>
         </v-expansion-panel>
-        <!-- PROJECT 5 -->
+
+        <!-- PROJECT 6 -->
         <v-expansion-panel>
           <v-expansion-panel-header>
             <span>
@@ -871,20 +937,20 @@
         />
         <div class="my-1 mx-2">
           <p class="mb-3">
-            When it comes to software development, I strive to create things and
+            When it comes to software development, I strive to create features and
             experiences that are functional, intuitive, modern, and aesthetically
-            pleasing. I enjoy diving deep into the logic of an app, website, or
-            feature, looking for ways to simplify and optimize both the app flow
+            pleasing. I always look for ways to simplify and optimize both the app flow
             and the underlying code and to continuously improve UI & UX based on user feedback.
-            When it comes to working in a team environment my goal is to write code that is readable,
+            I believe that the user experience should be the primary consideration, and when it 
+            comes to working in a team environment my goal is to write code that is readable,
             well-documented, and tested, making sure that established architecture and patterns
             are followed.
           </p>
           <p>
             Outside of work, I am typically either practicing jazz tunes on
-            clarinet, piano, or this sweet 7-string bass I recently got, producing
-            experimental electronic music, working on side projects, hiking, or rock
-            climbing. I am also a co-founder of
+            clarinet, piano, bass, or guitar, producing
+            experimental fusion music, working on side projects, hiking, rock
+            climbing, or planting trees on my friend's farm. I am also a co-founder of
             <a href="https://www.terrasounds.com" target="_blank"
               >Terra Sounds School of Music & Arts</a
             >.
@@ -934,8 +1000,8 @@ export default {
       showTooltipOnBottom: true,
       showContactInfo: true,
       showRecentWorkProjects: false,
-      showRecentSideProjects: false,
-      showAboutMe: false,
+      showRecentSideProjects: true,
+      showAboutMe: true,
     };
   },
 
@@ -1166,6 +1232,12 @@ button span {
   margin-left: 15px;
 }
 
+.verticalVideoWideOuterContainer {
+  width: 48.5% !important;
+  max-height: 650px !important;
+  height: 650px !important;
+}
+
 .verticalVideoContainer {
   max-height: 499px;
 }
@@ -1176,6 +1248,10 @@ button span {
 
 .solbeTextContainer {
   max-width: 65%;
+}
+
+.solbeNarrowTextContainer {
+  max-width: 45% !important;
 }
 
 .roundedVideoContainer {

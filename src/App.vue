@@ -1529,7 +1529,7 @@ a:active {
   }
 
   #platinumCouchVideo,
-  .verticalVideoOuterContainer {
+  .verticalVideoWideOuterContainer {
     height: 545px !important;
     width: 377px !important;
   }
@@ -1623,7 +1623,7 @@ a:active {
   }
 
   #platinumCouchVideo,
-  .verticalVideoOuterContainer {
+  .verticalVideoWideOuterContainer {
     height: 453px !important;
     width: 315px !important;
   }
@@ -1718,7 +1718,7 @@ a:active {
 
 @media screen and (max-width: 350px) {
   #platinumCouchVideo,
-  .verticalVideoOuterContainer {
+  .verticalVideoWideOuterContainer {
     height: 432px !important;
     width: 300px !important;
   }

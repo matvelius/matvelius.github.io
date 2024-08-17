@@ -316,6 +316,7 @@
             >
               <div class="verticalVideoContainer">
                 <video
+                  id="platinumCouchVideo"
                   height="650"
                   autoplay
                   loop
@@ -1226,7 +1227,7 @@ button span {
 
 .verticalVideoOuterContainer {
   width: 280px;
-  border-radius: 5px;
+  border-radius: 7px;
   overflow: hidden;
   float: right;
   margin-left: 15px;
@@ -1235,7 +1236,7 @@ button span {
 .verticalVideoWideOuterContainer {
   width: 48.5% !important;
   max-height: 650px !important;
-  height: 650px !important;
+  height: 649px !important;
 }
 
 .verticalVideoContainer {
@@ -1479,6 +1480,259 @@ a:active {
   text-decoration: none;
 }
 
+
+.v-expansion-panel-header {
+  min-height: 97px !important;
+}
+
+@media screen and (max-width: 1120px) {
+  #financeCode1 {
+    width: 60%;
+  }
+  #financeTopImage {
+    max-width: 340px;
+  }
+  #financeSecondImage {
+    float: right !important;
+    margin: 0 0 15px 15px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  #financeSecondImage {
+    width: 70%;
+  }
+  #financeCode2 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1005px) {
+  .twoImageLeft {
+    max-width: 300px;
+    margin: 0 90px 30px 0;
+  }
+
+  .twoImageRight {
+    max-width: 472px;
+    margin: 0 0 30px 40px;
+  }
+
+  #financeCode1 {
+    width: 100%;
+  }
+
+  #financeTopImage {
+    max-width: 412px;
+    float: left !important;
+    margin: 0 15px 15px 0 !important;
+  }
+
+  #platinumCouchVideo,
+  .verticalVideoOuterContainer {
+    height: 545px !important;
+    width: 377px !important;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .twoImageLeft {
+    max-width: 280px;
+    margin: 0 0 0 15px;
+  }
+
+  .twoImageRight {
+    display: block;
+    margin: 50px auto;
+    margin-top: -40px;
+  }
+
+  #gemroverBottomImage {
+    margin: 0 40px 40px 0;
+  }
+  .narrowImage {
+    margin-left: 40px;
+    margin-bottom: 40px;
+  }
+
+  .narrowImageLeft {
+    margin-left: 0;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    min-width: 215px;
+  }
+
+  #aboutMeCard {
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .outerVideoContainer {
+    margin: 20px auto;
+    float: none;
+  }
+  #financeLastImage {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  #gemroverTopImage {
+    width: 100% !important;
+    max-width: 623px !important;
+    height: auto !important;
+    margin: 30px auto !important;
+    display: block;
+    float: none !important;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .solbeTextContainer {
+    min-width: 100% !important;
+  }
+  .videoContainerContainer {
+    display: block;
+  }
+  #mashupBottomCode {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+    display: block !important;
+    margin: 15px auto !important;
+  }
+  #aboutMeCard {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .twoImageLeft {
+    max-width: 300px;
+    width: 35%;
+    margin: 0 0 15px 15px;
+  }
+
+  .twoImageRight {
+    display: block;
+    float: none;
+    width: 56%;
+    margin: 30px auto;
+  }
+
+  #platinumCouchVideo,
+  .verticalVideoOuterContainer {
+    height: 453px !important;
+    width: 315px !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #financeLastImage {
+    margin-bottom: 15px;
+  }
+  #financeCode3 {
+    width: 100%;
+  }
+
+  #aboutMeCard {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .projectImage {
+    width: 100%;
+    margin: 30px auto !important;
+    display: block;
+  }
+  .narrowImage {
+    width: 80%;
+    margin: 30px auto;
+  }
+  #financeTopImage,
+  #financeSecondImage,
+  #financeLastImage {
+    float: none !important;
+    margin: 30px auto !important;
+    width: 100% !important;
+  }
+  #aboutMeCard {
+    max-width: 100%;
+    border-radius: 0 !important;
+  }
+  #myPhoto {
+    display: block;
+    margin: 30px auto !important;
+  }
+}
+
+@media screen and (max-width: 558px) {
+  #main {
+    padding: 0px;
+  }
+  .parallaxContainer {
+    padding: 3px !important;
+  }
+  .leftContainer {
+    width: 100%;
+  }
+  .bottomContainer {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end !important;
+    margin-top: -50px;
+  }
+  .rightContainer {
+    flex-direction: row;
+    width: 100%;
+    box-shadow: none !important;
+  }
+
+  .rightContainer::before {
+    box-shadow: none !important;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .verticalVideoOuterContainer {
+    /* width: 280px; */
+    margin: 25px auto !important;
+    float: none;
+  }
+  .v-expansion-panel-content__wrap {
+    padding: 14px !important;
+  }
+}
+
+@media screen and (max-width: 459px) {
+  .contactButton {
+    width: 95px;
+  }
+  .contactButtonIcon {
+    font-size: 17px !important;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #platinumCouchVideo,
+  .verticalVideoOuterContainer {
+    height: 432px !important;
+    width: 300px !important;
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .parallaxContainer {
+      height: 236px !important;
+    }
+  }
+}
+
+
 .wiggle1 {
   -webkit-animation-name: wiggle1;
   -ms-animation-name: wiggle1;
@@ -1671,235 +1925,6 @@ a:active {
   }
   100% {
     transform: translateY(0px);
-  }
-}
-
-.v-expansion-panel-header {
-  min-height: 97px !important;
-}
-
-@media screen and (max-width: 1120px) {
-  #financeCode1 {
-    width: 60%;
-  }
-  #financeTopImage {
-    max-width: 340px;
-  }
-  #financeSecondImage {
-    float: right !important;
-    margin: 0 0 15px 15px;
-  }
-}
-
-@media screen and (max-width: 1080px) {
-  #financeSecondImage {
-    width: 70%;
-  }
-  #financeCode2 {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1005px) {
-  .twoImageLeft {
-    max-width: 300px;
-    margin: 0 90px 30px 0;
-  }
-
-  .twoImageRight {
-    max-width: 472px;
-    margin: 0 0 30px 40px;
-  }
-  #financeCode1 {
-    width: 100%;
-  }
-  #financeTopImage {
-    max-width: 412px;
-    float: left !important;
-    margin: 0 15px 15px 0 !important;
-  }
-}
-
-@media screen and (max-width: 959px) {
-  .twoImageLeft {
-    max-width: 280px;
-    margin: 0 0 0 15px;
-  }
-
-  .twoImageRight {
-    display: block;
-    margin: 50px auto;
-    margin-top: -40px;
-  }
-
-  #gemroverBottomImage {
-    margin: 0 40px 40px 0;
-  }
-  .narrowImage {
-    margin-left: 40px;
-    margin-bottom: 40px;
-  }
-
-  .narrowImageLeft {
-    margin-left: 0;
-    margin-right: 15px;
-    margin-bottom: 15px;
-    min-width: 215px;
-  }
-
-  #aboutMeCard {
-    max-width: 70%;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .outerVideoContainer {
-    margin: 20px auto;
-    float: none;
-  }
-  #financeLastImage {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 870px) {
-  #gemroverTopImage {
-    width: 100% !important;
-    max-width: 623px !important;
-    height: auto !important;
-    margin: 30px auto !important;
-    display: block;
-    float: none !important;
-  }
-}
-
-@media screen and (max-width: 790px) {
-  .solbeTextContainer {
-    min-width: 100% !important;
-  }
-  .videoContainerContainer {
-    display: block;
-  }
-  #mashupBottomCode {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: 100% !important;
-    float: none !important;
-    display: block !important;
-    margin: 15px auto !important;
-  }
-  #aboutMeCard {
-    max-width: 80%;
-  }
-}
-
-@media screen and (max-width: 730px) {
-  .twoImageLeft {
-    max-width: 300px;
-    width: 35%;
-    margin: 0 0 15px 15px;
-  }
-
-  .twoImageRight {
-    display: block;
-    float: none;
-    width: 56%;
-    margin: 30px auto;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  #financeLastImage {
-    margin-bottom: 15px;
-  }
-  #financeCode3 {
-    width: 100%;
-  }
-
-  #aboutMeCard {
-    max-width: 90%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .projectImage {
-    width: 100%;
-    margin: 30px auto !important;
-    display: block;
-  }
-  .narrowImage {
-    width: 80%;
-    margin: 30px auto;
-  }
-  #financeTopImage,
-  #financeSecondImage,
-  #financeLastImage {
-    float: none !important;
-    margin: 30px auto !important;
-    width: 100% !important;
-  }
-  #aboutMeCard {
-    max-width: 100%;
-    border-radius: 0 !important;
-  }
-  #myPhoto {
-    display: block;
-    margin: 30px auto !important;
-  }
-}
-
-@media screen and (max-width: 558px) {
-  #main {
-    padding: 0px;
-  }
-  .parallaxContainer {
-    padding: 3px !important;
-  }
-  .leftContainer {
-    width: 100%;
-  }
-  .bottomContainer {
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-end !important;
-    margin-top: -50px;
-  }
-  .rightContainer {
-    flex-direction: row;
-    width: 100%;
-    box-shadow: none !important;
-  }
-
-  .rightContainer::before {
-    box-shadow: none !important;
-  }
-}
-
-@media screen and (max-width: 530px) {
-  .verticalVideoOuterContainer {
-    /* width: 280px; */
-    margin: 25px auto !important;
-    float: none;
-  }
-  .v-expansion-panel-content__wrap {
-    padding: 14px !important;
-  }
-}
-
-@media screen and (max-width: 459px) {
-  .contactButton {
-    width: 95px;
-  }
-  .contactButtonIcon {
-    font-size: 17px !important;
-  }
-}
-
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) {
-    .parallaxContainer {
-      height: 236px !important;
-    }
   }
 }
 </style>
